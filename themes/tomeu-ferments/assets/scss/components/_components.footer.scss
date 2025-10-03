@@ -1,0 +1,58 @@
+.c-footer {
+    @apply bg-primary pt-40 px-40 md:px-40 text-white pb-40;
+    & a{
+        @apply hover:text-[#525252] transition-all duration-300;
+    }
+    &__top {
+        @apply border-b-[1px] pb-40 border-white justify-between items-center -lg:items-center -xl:items-start -xl:gap-32 -xl:flex-col grid grid-cols-12 gap-6;
+        &--phrase{
+            @apply  col-span-5 text-[72px] leading-[72px] font-light -md:col-span-12 flex justify-center items-center  -md:gap-24;
+        }
+        &--form{
+            @apply  col-start-7 col-span-6 -md:col-span-12 flex justify-center items-center -md:col-start-1 -md:gap-24;
+        }
+    }
+    &__middle{
+        @apply py-24 grid grid-cols-12 gap-6;
+        &--logo{
+            @apply col-span-3 -md:col-span-12 flex justify-center items-center flex-col;
+            &-rrss{
+                @apply flex gap-24 items-center pt-24;
+                & a{
+                    @apply bg-secondary rounded-full hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer border-secondary
+                }
+            }
+        }
+    &--links{
+        @apply col-span-6 col-start-7 flex flex-col gap-12 -md:col-span-12 justify-center items-center -md:col-start-1 -md:gap-24;
+        & a{
+            @apply text-24 font-light;
+        }
+    }
+    }
+
+    &__bottom {
+        @apply
+            flex
+            justify-between
+            items-center
+            -lg:flex-col
+            gap-24
+            pt-48;
+        &__legal {
+            @apply
+                flex
+                justify-center
+                flex-wrap
+                gap-16
+                text-16
+                font-light
+                2xl:gap-24;
+        }
+        &__copyright {
+            @apply
+                text-16
+                font-light;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table bmut_tomeuferments_tags'
+    - builder_table_create_bmut_tomeuferments_tags.php
+v1.0.3:
+    - 'Created table bmut_tomeuferments_recipe'
+    - builder_table_create_bmut_tomeuferments_recipe.php
+v1.0.4:
+    - 'Updated table bmut_tomeuferments_recipe'
+    - builder_table_update_bmut_tomeuferments_recipes.php
+v1.0.5:
+    - 'Updated table bmut_tomeuferments_recipes'
+    - builder_table_update_bmut_tomeuferments_recipes_2.php
+v1.0.6:
+    - 'Created table bmut_tomeuferments_contact'
+    - builder_table_create_bmut_tomeuferments_contact.php
+v1.0.7:
+    - 'Updated table bmut_tomeuferments_contact'
+    - builder_table_update_bmut_tomeuferments_contact.php
+v1.0.8:
+    - 'Created table bmut_tomeuferments_recipes_tag'
+    - builder_table_create_bmut_tomeuferments_recipes_tag.php
+v1.0.9:
+    - 'Updated table bmut_tomeuferments_recipes'
+    - builder_table_update_bmut_tomeuferments_recipes_3.php
+v1.0.10:
+    - 'Updated table bmut_tomeuferments_recipes'
+    - builder_table_update_bmut_tomeuferments_recipes_4.php
+v1.0.11:
+    - 'Updated table bmut_tomeuferments_recipes'
+    - builder_table_update_bmut_tomeuferments_recipes_5.php

@@ -1,0 +1,71 @@
+<div class="c-header  {% if this.page.title != 'Home' %} inner {% endif %}" >
+    <a href="{{'index'| page}}">
+        <img src="{{'assets/images/logo.svg'|theme}}" class="svg c-header__logo transition-transform duration-300">
+        <img src="{{'assets/images/shortlogo.svg'|theme}}" class="svg c-header__logomb transition-transform duration-300">
+    </a>
+    <div class="c-header__nav">
+        <div class="flex gap-32 items-center c-header__nav--items" data-toggle-class-item="menu-mb">
+            <a href="#" class="p-16 bg-primary rounded-full hover:bg-secondary transition-all duration-300 ease-in-out" data-toggle-class="is-active" data-toggle-class-item="megamenu">
+                <img src="{{'assets/images/menu.svg'|theme}}"  class="svg">
+            </a>
+        </div>
+        <div class="c-header__nav--item gap-0 -sm:block">
+            <a href="#contact-form" class="c-btn__primary ">{{'Contacte'|_}}<img src="{{'assets/images/icons/arrow-right.svg'|theme}}" class="svg transition-transform duration-300"></a>
+        </div>
+    </div>
+</div>
+<div class="c-megamenu z-50" data-toggle-class-item="megamenu">
+    <div class="c-megamenu__top">
+        <div class="c-megamenu__logo">
+            <a href="{{'index'| page}}">
+                <img src="{{'assets/images/logo-full-white.svg'|theme}}" class="svg c-header__logo transition-transform duration-300">
+            </a>
+        </div>
+        <div class="c-megamenu__close" data-toggle-class-item="megamenu" data-toggle-class="is-active">
+            <a class="" href="#">
+                <img src="{{'assets/images/close.svg'|theme}}" class="svg transition-transform duration-300">
+            </a>
+        </div>
+    </div>
+    <div class="c-megamenu__content ">
+        <div class="c-megamenu__info">
+            <a href="#">
+                <img src="{{'assets/images/location.svg'|theme}}" class="svg transition-transform duration-300">
+                <span class="">
+                    Llucmajor, Mallorca
+                </span>
+            </a>
+            <a href="#">
+                <img src="{{'assets/images/phone.svg'|theme}}" class="svg transition-transform duration-300">
+                <span class="">
+                    +34 654 321 987
+                </span>
+            </a>
+            <a href="mailto:tomeuferments@gmail.com">
+                <img src="{{'assets/images/email.svg'|theme}}" class="svg transition-transform duration-300">
+                <span class="">
+                    tomeuferments@gmail.com
+                </span>
+            </a>
+            <div class="c-line-b h-1 w-full bg-white"></div>
+            <div class="c-megamenu__info--rrss ">
+                <a href="https://www.instagram.com/tomeuferments/" target="_blank" class="p-12">
+                    <img src="{{'assets/images/icons/instagram.svg'|theme}}" class="svg">
+                </a>
+                <a href="https://www.facebook.com/tomeuferments" target="_blank" class="py-12 px-[18px]">
+                    <img src="{{'assets/images/icons/facebook.svg'|theme}}" class="svg">
+                </a>
+            </div>
+        </div>
+        <div class="c-line bg-white h-full w-1"></div>
+        <div class="c-megamenu__menu ">
+            <div class="c-megamenu__menu--item">
+                <a href="{{'index'| page}}" class="c-megamenu__menu--link">{{'Inici'|_}}</a> /
+            </div>
+            <div class="c-megamenu__menu--item">
+                <a href="{{'receta'|page}}" class="c-megamenu__menu--link">{{'Receptes'|_}}</a> /
+            </div>
+            {% component 'sitePicker' %}
+        </div>
+    </div>
+</div>

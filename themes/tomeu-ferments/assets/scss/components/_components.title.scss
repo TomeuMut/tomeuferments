@@ -1,0 +1,9 @@
+.c-title{
+    @apply font-be-vietnam-pro py-48;
+    &__text{
+        @apply text-48 leading-[56px] font-extralight;
+    }
+    &__subtitle{
+        @apply text-24 leading-[32px] font-light;
+    }
+}

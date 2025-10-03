@@ -1,0 +1,20 @@
+@import "./components.header";
+@import "./components.banner";
+@import "./components.btn";
+@import "./components.hero";
+@import "./components.text";
+@import "./components.title";
+@import "./components.images";
+@import "./components.legal";
+@import "./components.grid";
+@import "./components.card";
+@import "./components.gallery";
+@import "./components.megamenu";
+@import "./components.form";
+@import "./components.footer";
+
+
+
+#js-map{
+    @apply w-full h-[680px];
+}

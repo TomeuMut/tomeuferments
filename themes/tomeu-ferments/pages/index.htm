@@ -1,0 +1,90 @@
+url = "/"
+layout = "default"
+title = "Home"
+
+[HomeRecipes]
+
+[CarrouselRecipes]
+
+[viewBag]
+localeUrl[es] = "/"
+localeUrl[en-gb] = "/"
+==
+<div class=c-banner>
+    <div class="c-banner__item">
+        <img class="c-banner__img" src="{{'assets/images/Kombucha.jpg'|theme}}" alt="" width="100%" height="100%">
+        <div class="absolute left-48 top-[65%] -translate-y-1/2 rotate-[-90deg] origin-left text-white tracking-[2px] font-light text-sm -md:left-24">
+            <a href="#contact-form">{{'CONTACTA AMB NOSALTRES'|_}}</a>
+        </div>
+        <div class="absolute bottom-48 left-48 text-white text-24 space-y-3 max-w-xl -md:left-24">
+            <p class="text-40">©2017</p>
+            <p>{{'DES DEL 2017 EXPLORANT LA FERMENTACIÓ. RECEPTES I SABORS QUE EVOLUCIONEN AMB EL TEMPS. PASSIÓ I PACIÈNCIA.'|_}}</p>
+        </div>
+        <div class="absolute bottom-48 right-48 text-right text-white">
+            <a href="{{'receta'|page}}" class="c-btn__outline text-24 text-white border-white py-12 px-48 -md:hidden">
+                {{'Receptes'|_}} <span class="ml-2">→</span>
+            </a>
+            <p class="mt-3 text-18 max-w-md text-justify -md:hidden">{{'Descobreix pas a pas com preparar ferments, pans, conserves i més. Ingredients simples, processos naturals i resultats deliciosos.'|_}}</p>
+        </div>
+         <div class="c-banner__contact">
+            <div class="c-banner__contact--rrss absolute right-[2%] top-1/2 transform -translate-y-1/2 space-y-4">
+                <a href="https://www.instagram.com/tomeuferments/" target="_blank">
+                    <img src="{{'assets/images/icons/instagram.svg'|theme}}" alt="" class="svg w-32 h-32 fill-secondary">
+                </a>
+                <a href="https://www.youtube.com/@tomeuferments" target="_blank">
+                    <img src="{{'assets/images/icons/youtube.svg'|theme}}" alt="" class="svg w-32 h-32 fill-secondary">
+                </a>
+            </div>
+        </div>
+        <!-- <div class="c-banner__arrow">
+            <img src="{{'assets/images/arrow-down.svg'|theme}}" alt="" class="svg">
+            <div class="c-banner__arrow--text">
+                SCROLL
+            </div>
+        </div> -->
+    </div>
+</div>
+<div class="px-48">
+    <div class="flex items-center gap-8 col-span-2 text-20 leading-[64px] text-secondary"><div class="w-24 h-24 bg-secondary rounded-full"></div>{{'DESCOBREIX MÉS DE MI'|_}}</div>
+    <div class="grid grid-cols-12 pt-64  gap-8 ">
+        <div class="col-start-2 col-span-4 text-secondary uppercase text-48 leading-[54px] font-light -md:col-span-12 -md:col-start-1">
+            {{'Fermentant des del 2017 amb passió, tradició i molta curiositat.'|_ }}
+        </div>
+        <div class="col-start-8 col-span-4 -md:col-start-1 -md:col-span-12">
+            <div class="text-18 leading-7">{{'Soc en Bartomeu i vaig començar a fermentar l’any 2017, guiat pel saber de la meva padrina i una recepta senzilla per aprofitar la fruita del camp. Anys abans, en Rachid —un company de FP i amic— m’havia despertat la curiositat per les cerveses artesanes mentre treballava al Lorien, un bar emblemàtic de Palma. Des de llavors, la fermentació s’ha convertit en un camí de descobriment, memòria i creació.'|_}}</div>
+            <div class="c-btn__outline mt-32">{{'DESCOBREIX-HO TOT SOBRE MI'|_ }} <img src="{{'assets/images/icons/arrow-right.svg'|theme}}" class="svg transition-transform duration-300"></div>
+        </div>
+    </div>
+</div>
+<div class="px-48">
+    <div class="grid grid-cols-12 pt-64  gap-8">
+        <div class="col-start-2 col-span-4 -md:col-start-1 -md:col-span-12">
+            <img class="w-full h-full object-cover" src="{{'assets/images/home.jpg'|theme}}" alt="">
+        </div>
+        <div class="col-start-7 col-span-6 flex items-end -md:col-start-1 -md:col-span-12 md:mt-96">
+            <img class="w-full h-full object-cover " src="{{'assets/images/home2.jpg'|theme}}" alt="">
+        </div>
+    </div>
+</div>
+<div class="px-48">
+    <div class="flex items-center gap-8 col-span-2 text-20 leading-[64px] text-secondary uppercase pt-64"><div class="w-24 h-24 bg-secondary rounded-full"></div> {{'Com ho feim?'|_}}</div>
+    <div class="grid grid-cols-12 pt-64 gap-8">
+        <div class="col-start-1 col-span-7 text-secondary uppercase text-[80px] leading-[92px] font-light -md:col-span-12 -md:col-start-1 -md:text-[48px] -md:leading-[56px]">
+            {{'A Tomeu Ferments, cada elaboració neix del respecte pel temps, el producte i el saber transmès.'|_}}
+        </div>
+        <div class="col-start-4 col-span-4 -md:col-start-1 -md:col-span-12">
+            <div class="text-18 leading-7">{{'Fermentar és escoltar: l’ingredient, l’entorn i la intuïció. A cada recepta hi ha tècnica, però també memòria i paciència. Treballem amb processos naturals, fermentacions lentes i productes locals, respectant cada etapa perquè el resultat parli per ell sol.'|_}} </div>
+            <a href="{{'receta'|page}}" class="c-btn__outline mt-32 uppercase">{{'Veure Receptes'|_}} <img src="{{'assets/images/icons/arrow-right.svg'|theme}}" class="svg transition-transform duration-300"></a>
+        </div>
+    </div>
+</div>
+{% component 'CarrouselRecipes' %}
+<div class="px-48 py-72">
+    <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="flex items-center gap-8 col-span-2 text-20 leading-[64px] text-secondary uppercase -md:col-start-1 -md:col-span-12"><div class="w-24 h-24 bg-secondary rounded-full"></div> {{'Com ho feim'|_}}</div>
+        <div class="text-secondary text-48 leading-[56px] col-span-6 col-start-4 uppercase -md:col-start-1 -md:col-span-12">{{'Només ingredients reals, temps i fermentació natural'|_}}</div>
+        <a href="{{'receta'|page}}" class="c-btn__outline mt-32 uppercase col-span-2 col-start-11 py-12 px-48 -md:col-start-1 -md:col-span-12">{{'Veure Receptes'|_}} <img src="{{'assets/images/icons/arrow-right.svg'|theme}}" class="svg transition-transform duration-300"></a>
+    </div>
+</div>
+
+{% component 'HomeRecipes' %}

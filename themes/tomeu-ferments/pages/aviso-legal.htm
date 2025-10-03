@@ -1,0 +1,19 @@
+title = "Aviso Legal"
+layout = "default"
+url = "/aviso-legal"
+
+[viewBag]
+localeUrl[en-gb] = "/legal-notice"
+localeUrl[de] = "/rechtlicher-hinweis"
+
+localeTitle[en-gb] = "Legal Notice"
+localeTitle[de] = "Rechtlicher Hinweis"
+
+[LegalTerms]
+==
+<div class="c-banner-text">
+    <h1 class="c-banner-text__title">
+      {{'Aviso Legal'|_}}
+    </h1>
+</div>
+{% component 'LegalTerms' %}

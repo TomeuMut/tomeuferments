@@ -1,0 +1,33 @@
+url = "/contact"
+layout = "default"
+title = "Contacto"
+
+[viewBag]
+localeUrl[en-gb] = "/contact"
+localeUrl[de] = "/kontakt"
+
+localeTitle[en-gb] = "Contact"
+localeTitle[de] = "Kontakt"
+
+[ContactSend]
+==
+<div class="c-banner-text">
+    <h1 class="c-banner-text__title">
+        {{'Hablemos, Estamos <br> Aquí para ti!'|_}}
+    </h1>
+</div>
+<div class="c-contact">
+    <div class="c-contact__wrapper">
+        <div class="c-contact__form">
+            <h2 class="c-contact__form--title">
+                {{'Ponte en contacto con nosotros, estaremos encantado de atenderte.'|_}}
+            </h2>
+            {% component 'ContactSend' %}
+        <div class="c-contact__img">
+            <img src="{{'assets/images/contacto.png'|theme}}" alt="">
+        </div>
+        <div class="c-contact__map">
+            <div class="c-map js-map" id="js-map"></div>
+        </div>
+    </div>
+</div>

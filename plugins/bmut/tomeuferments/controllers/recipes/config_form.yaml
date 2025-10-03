@@ -1,0 +1,10 @@
+name: Recipes
+form: $/bmut/tomeuferments/models/recipes/fields.yaml
+modelClass: Bmut\Tomeuferments\Models\Recipes
+defaultRedirect: bmut/tomeuferments/recipes
+create:
+    redirect: 'bmut/tomeuferments/recipes/update/:id'
+    redirectClose: bmut/tomeuferments/recipes
+update:
+    redirect: bmut/tomeuferments/recipes
+    redirectClose: bmut/tomeuferments/recipes

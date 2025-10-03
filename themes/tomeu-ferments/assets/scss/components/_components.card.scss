@@ -1,0 +1,19 @@
+.c-card{
+    &__img{
+        img{
+            @apply rounded-lg h-[350px] w-full object-cover;
+        }
+    }
+    &__title{
+        @apply text-24 font-bold py-8;
+    }
+    &__text{
+        @apply text-16;
+    }
+    &__link{
+        @apply py-8 ;
+        &--text{
+            @apply text-primary hover:text-secondary transition-all duration-300 hover:font-bold flex items-center gap-8;
+        }
+    }
+}

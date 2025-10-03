@@ -1,0 +1,11 @@
+title = "Recetas Interior"
+layout = "default"
+url = "/receptes/:slug"
+
+
+[viewBag]
+url[es] = "/recetas/:slug"
+url[en-gb] = "/recipes/:slug"
+[InnerRecipes]
+==
+{% component 'InnerRecipes' %}

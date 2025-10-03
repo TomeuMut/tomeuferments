@@ -1,0 +1,60 @@
+.c-banner{
+    @apply relative;
+    &__img{
+        @apply w-full h-screen object-cover;
+    }
+    &__text{
+        @apply absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-full flex flex-col items-center;
+    }
+    &__title{
+        @apply text-[35px] tracking-[16px] -lg:tracking-normal;
+        span{
+            @apply text-[91px];
+
+        }
+    }
+    &__description{
+        @apply text-[32px] font-extralight w-[675px] leading-9 -md:w-auto;
+        &-position{
+            @apply absolute bottom-[20%] left-1/2 transform -translate-x-1/2 text-white text-center;
+        }
+    }
+    &__arrow{
+        @apply absolute bottom-[2%] left-1/2 transform -translate-x-1/2 flex justify-center flex-col items-center;
+        & svg{
+            @apply transition-all duration-300 ease-in-out;
+            animation: scrollBackground 1s linear infinite;
+        }
+        &--text{
+            @apply text-[14px] font-Roboto uppercase text-white;
+        }
+    }
+    &__contact{
+        &--rrss{
+            @apply absolute right-[2%] top-1/2 transform -translate-y-1/2 space-y-4;
+            & a{
+                @apply bg-white p-12 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 ease-in-out border-white hover:border-secondary border cursor-pointer;
+            }
+            & svg{
+                @apply  w-32 h-32 fill-secondary
+            }
+            & path{
+                @apply  fill-secondary
+            }
+        }
+    }
+
+}
+.c-banner-text{
+    @apply pt-[242px] xl:pb-112 flex items-center justify-center;
+    &__title{
+        @apply text-80 xl:text-[100px] font-extralight leading-[110px] uppercase text-center -md:text-40 -md:leading-[40px];
+    }
+}
+.c-banner-text-3{
+    @apply grid grid-cols-12 gap-8 text-64 lg:text-[100px] font-extralight leading-[80px] lg:leading-[110px] uppercase pt-[172px] pb-[112px] -md:text-40 -md:leading-[40px] -md:pb-48;
+}
+@keyframes scrollBackground {
+    0% { transform: translateY(-10%); }
+    100% { transform: translateY(0%); }
+}

@@ -1,0 +1,16 @@
+<form action="POST" data-request="onSend" data-request-flash="" data-request-success="this.reset()">
+    <div class="c-form__inputs">
+    <input type="text" name="name" placeholder="{{'Nom i Llinatges'|_}}" required>
+    <input type="tel" name="phone" placeholder="{{'Teléfon'|_}}" required>
+</div>
+<div class="c-form__input">
+    <input class="" type="email" name="email" placeholder="{{'Email'|_}}" required>
+</div>
+<div class="c-form__legal">
+    <div class="c-form__legal--checkbox" for="legal">
+        <input type="checkbox" name="legal" id="" value="1" required>
+        <span class="c-form__title--text">{{'He llegit i accepto la'|_ }} <a href="{{'politica-de-privacitat'| page}}" target="_blank">{{'Política de privacitat'|_}}</a></span>
+    </div>
+    <button type="submit" class="c-btn__outline ">{{'Enviar'|_}} <img src="{{'assets/images/icons/arrow-right.svg'|theme}}" class="svg transition-transform duration-300"></button>
+</div>
+</form>

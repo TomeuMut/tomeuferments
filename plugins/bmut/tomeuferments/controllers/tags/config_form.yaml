@@ -1,0 +1,10 @@
+name: Tags
+form: $/bmut/tomeuferments/models/tag/fields.yaml
+modelClass: Bmut\Tomeuferments\Models\Tag
+defaultRedirect: bmut/tomeuferments/tags
+create:
+    redirect: 'bmut/tomeuferments/tags/update/:id'
+    redirectClose: bmut/tomeuferments/tags
+update:
+    redirect: bmut/tomeuferments/tags
+    redirectClose: bmut/tomeuferments/tags

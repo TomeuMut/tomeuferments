@@ -1,0 +1,19 @@
+title = "Politica de Cookies"
+layout = "default"
+url = "/politica-de-cookies"
+
+[viewBag]
+localeUrl[en-gb] = "/cookie-policy"
+localeUrl[de] = "/cookie-richtlinie"
+
+localeTitle[en-gb] = "Cookie Policy"
+localeTitle[de] = "Cookie-Richtlinie"
+
+[LegalCookies]
+==
+<div class="c-banner-text">
+    <h1 class="c-banner-text__title">
+      {{'Política de Cookies'|_}}
+    </h1>
+</div>
+{% component 'LegalCookies' %}

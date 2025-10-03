@@ -1,0 +1,237 @@
+.c-header {
+    @apply
+        fixed
+        top-0
+        w-full
+        z-20
+        py-20
+        md:py-20
+        px-16
+        xl:px-48
+        flex
+        transition-all
+        duration-300
+        items-center
+        justify-between;
+
+    &.inner {
+        // @apply bg-white
+    }
+    &.inner .c-header__nav--item{
+        @apply text-primary;
+    }
+    &.inner .c-header__logo path{
+        // @apply fill-primary;
+    }
+    &.stuck {
+        @apply
+            bg-white;
+    }
+
+    &.stuck .c-header__nav--item{
+        @apply
+            text-primary;
+    }
+
+
+    &__nav {
+        @apply
+            flex
+            items-center
+            text-white
+            gap-32
+            -md:text-black;
+
+        &--item {
+            @apply
+                flex
+                items-center
+                text-white
+                -lg:text-black
+                transition-all
+                duration-300
+                hover:text-primary
+                gap-8
+                cursor-pointer
+                text-16
+                -xl:hidden;
+        }
+
+        &__submenu {
+            @apply
+                absolute
+                whitespace-nowrap
+                bg-white
+                top-32
+                hidden
+                justify-center
+                flex-col
+                gap-16
+                px-40
+                py-24
+                hover:flex;
+                & li {
+                    @apply py-4
+                }
+            li a {
+                @apply
+                text-primary
+                font-normal
+                leading-6
+                flex
+                items-center
+                gap-8
+                text-16
+                transition-all duration-300
+                hover:font-bold
+                hover:text-primary;
+
+            }
+
+            &.is-active {
+                @apply
+                    text-primary;
+            }
+        }
+        &--items{
+        }
+        &-mb{
+            @apply xl:hidden;
+            & svg{
+                @apply w-[24px] h-[24px];
+                & line{
+                    @apply stroke-primary
+                }
+
+
+            }
+        }
+    }
+
+    &__logo {
+
+        @apply
+            h-[90px]
+            w-auto
+            -md:hidden;
+
+
+    }
+    &__logomb{
+        @apply
+            md:hidden
+            h-[90px]
+            w-auto;
+    }
+
+
+    &__menu {
+        @apply
+            bg-white
+            w-full
+            z-50
+            top-[-200%]
+            text-white
+            transition-all
+            duration-[800ms]
+            fixed;
+
+        &__nav {
+            @apply
+                flex
+                items-center
+                justify-between
+                py-32
+                px-48;
+        }
+
+
+        &.is-active {
+            @apply
+                top-0;
+        }
+
+        &__container {
+            @apply
+                flex
+                items-center
+                justify-between
+                px-48;
+
+            &--nav {
+                @apply
+                    flex
+                    items-center
+                    gap-[186px];
+
+                &-col {
+                    @apply
+                        flex
+                        flex-col
+                        gap-24;
+                }
+            }
+        }
+
+        &__contact {
+            @apply
+                flex
+                items-center
+                justify-between
+                px-48
+                pt-72
+                pb-56;
+
+            &__item {
+                @apply
+                    flex
+                    flex-col
+                    gap-8
+                    border-white
+                    border-t-[1px]
+                    pr-[99px];
+
+                &--icon {
+                    @apply
+                        flex
+                        items-end
+                        gap-16;
+                }
+            }
+        }
+
+        &__card {
+            @apply
+                bg-transparent
+                relative
+                p-[10px]
+                justify-center
+                items-center
+                flex
+                flex-col
+                gap-20;
+
+            &--info {
+                @apply
+                    flex
+                    justify-between
+                    w-full
+                    px-[13px]
+                    z-2
+                    relative;
+            }
+
+            &--background {
+                @apply
+                    absolute
+                    object-bottom
+                    z-1
+                    top-0
+                    w-full
+                    h-full
+                    object-cover;
+            }
+        }
+    }
+
+}

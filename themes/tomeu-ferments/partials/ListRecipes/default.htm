@@ -1,0 +1,72 @@
+<div class=c-banner>
+    <div class="c-banner__item">
+        <img class="c-banner__img h-[80vh]" src="{{'assets/images/Kombucha.jpg'|theme}}" alt="" width="100%" height="100%">
+        <div class="absolute bottom-48 left-48 text-white text-64 space-y-3 max-w-xl uppercase">
+            <h1>{{'Recetas'|_}}<h1>
+        </div>
+         <div class="c-banner__contact">
+            <div class="c-banner__contact--rrss absolute right-[2%] top-1/2 transform -translate-y-1/2 space-y-4">
+                <a href="https://www.instagram.com/tomeuferments/" target="_blank">
+                    <img src="{{'assets/images/icons/instagram.svg'|theme}}" alt="" class="svg w-32 h-32 fill-secondary">
+                </a>
+                <a href="https://www.youtube.com/@tomeuferments" target="_blank">
+                    <img src="{{'assets/images/icons/youtube.svg'|theme}}" alt="" class="svg w-32 h-32 fill-secondary">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="px-48 pt-96">
+    <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="text-secondary text-48 leading-[56px] col-span-8 -md:col-span-12 uppercase -md:text-32 -md:leading-8">{{'Selecciona les receptes que vulguis gaudir'|_}}</div>
+    </div>
+</div>
+<div class="px-48 pb-96">
+    <div class="flex gap-12 flex-wrap -md:gap-2" id="tag-filters">
+        <div class="c-btn__outline mt-32 uppercase py-12 px-48 -md:mt-0 -md:px-40"data-tag="all">{{'Totes'|_}}</div>
+        {% for tag in tags %}
+            <div class="c-btn__outline mt-32 uppercase py-12 px-48 -md:mt-0 -md:px-40" data-tag="{{ tag.name }}">{{ tag.name }}</div>
+        {% endfor %}
+    </div>
+</div>
+<div class="px-48 pb-96">
+    <div class="grid grid-cols-12 gap-48 -md:gap-8"  id="recipes-grid">
+        {% for recipe in recipes %}
+            <div class="col-span-4 recipe-item transition-opacity duration-500 opacity-100 -md:col-span-12 -md:py-24" data-tags="{{ recipe.tags|map(t => t.name)|join(',') }}">
+                <div class="">
+                    <img class="object-cover w-full h-full max-h-[450px] -md:max-w-[350px]" src="{{recipe.img_featured.getThumb(575,430, {mode:'auto' , extension: 'webp' })}}" alt="">
+                </div>
+                <div class="text-18 leading-[64px] uppercase text-secondary font-medium">{{recipe.tags[0].name}}</div>
+                <div class="flex gap-8 items-center text-32 leading-[64px] font-medium">
+                    <div class="text-secondary ">{{recipe.title}}</div>
+                </div>
+                <div class="text-18 leading-6">    {{ recipe.description|striptags|slice(0, 250) }}{% if recipe.description|length > 250 %}...{% endif %}</div>
+                <a href="{{ 'receta-interior'|page({slug: recipe.slug }) }}" class="c-btn__secondary mt-32 py-12 px-48">{{'Veure Receptes'|_}} <img src="{{'assets/images/icons/arrow--up-right.svg'|theme}}" class="svg transition-transform duration-300"></a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll("#tag-filters div[data-tag]");
+    const recipes = document.querySelectorAll(".recipe-item");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const selectedTag = button.getAttribute("data-tag").toLowerCase();
+
+            recipes.forEach(recipe => {
+                const recipeTags = recipe.getAttribute("data-tags").toLowerCase().split(",");
+
+                if (selectedTag === "all" || recipeTags.includes(selectedTag)) {
+                    recipe.classList.remove("opacity-0", "pointer-events-none");
+                    recipe.classList.add("opacity-100");
+                } else {
+                    recipe.classList.remove("opacity-100");
+                    recipe.classList.add("opacity-0", "pointer-events-none");
+                }
+            });
+        });
+    });
+});
+</script>

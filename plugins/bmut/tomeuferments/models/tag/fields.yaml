@@ -1,0 +1,11 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    slug:
+        label: Url
+        span: auto
+        type: text
+        comment: 'This field is auto-generated from the title field.'
+        disabled: true
