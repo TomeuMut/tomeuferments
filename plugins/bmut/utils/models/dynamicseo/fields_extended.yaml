@@ -1,6 +1,0 @@
-bmutSeo:
-    label: Seo
-    span: full
-    type: partial
-    path: $/bmut/utils/partials/_bmutSeo.htm
-    tab: Seo
