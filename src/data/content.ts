@@ -60,9 +60,9 @@ const es: Content = {
     label: '03 / Un vistazo al proyecto', title: ['Ingredientes sencillos.', 'Transformaciones vivas.'],
     intro: 'Algunas imágenes del universo de Tomeu Ferments: bebidas fermentadas, maceraciones y conservas. Distintas formas de explorar lo que el tiempo puede hacer.',
     items: [
-      { image: 'kombucha', title: 'Fermentación', subtitle: 'Observar cómo la vida transforma.', alt: 'Manos sosteniendo un tarro de kombucha cubierto con una tela' },
-      { image: 'lemons', title: 'Maceración', subtitle: 'Aromas que encuentran su tiempo.', alt: 'Tarros de cristal con limones y otros ingredientes' },
-      { image: 'preserves', title: 'Conservación', subtitle: 'Dar otra vida a lo que nos rodea.', alt: 'Tres tarros de cristal con verduras y conservas de diferentes colores' },
+      { image: 'Kombucha.jpeg', title: 'Fermentación', subtitle: 'Observar cómo la vida transforma.', alt: 'Recipiente de kombucha con grifo, cubierto con una tela' },
+      { image: 'Maceracio.jpeg', title: 'Maceración', subtitle: 'Aromas que encuentran su tiempo.', alt: 'Tres botellas de cristal con maceraciones y tapones de corcho' },
+      { image: 'Conserva.jpeg', title: 'Conservación', subtitle: 'Dar otra vida a lo que nos rodea.', alt: 'Tarro de cristal con pimientos verdes en conserva' },
     ],
   },
   sharing: { label: 'Una curiosidad compartida', title: ['El proceso también', 'se comparte.'], text: 'Hablar de lo que hacemos, intercambiar ideas y descubrir otros puntos de vista también forma parte del camino. En Instagram comparto pequeños momentos de Tomeu Ferments y las elaboraciones que van tomando forma.', cta: 'Sigue el proceso en Instagram', imageAlt: 'Bartomeu compartiendo su experiencia con un grupo de personas' },
@@ -96,9 +96,9 @@ const en: Content = {
   gallery: {
     label: '03 / A glimpse of the project', title: ['Simple ingredients.', 'Living transformations.'], intro: 'A few images from the world of Tomeu Ferments: fermented drinks, macerations and preserves. Different ways of exploring what time can do.',
     items: [
-      { image: 'kombucha', title: 'Fermentation', subtitle: 'Watching life transform ingredients.', alt: 'Hands holding a jar of kombucha covered with a cloth' },
-      { image: 'lemons', title: 'Maceration', subtitle: 'Giving aromas time to develop.', alt: 'Glass jars containing lemons and other ingredients' },
-      { image: 'preserves', title: 'Preservation', subtitle: 'Giving what surrounds us another life.', alt: 'Three glass jars with vegetables and preserves of different colours' },
+      { image: 'Kombucha.jpeg', title: 'Fermentation', subtitle: 'Watching life transform ingredients.', alt: 'Kombucha vessel with a tap, covered with a cloth' },
+      { image: 'Maceracio.jpeg', title: 'Maceration', subtitle: 'Giving aromas time to develop.', alt: 'Three glass bottles of macerations with cork stoppers' },
+      { image: 'Conserva.jpeg', title: 'Preservation', subtitle: 'Giving what surrounds us another life.', alt: 'Glass jar of preserved green peppers' },
     ],
   },
   sharing: { label: 'A shared curiosity', title: ['The process is', 'for sharing, too.'], text: 'Talking about what we do, exchanging ideas and discovering other perspectives are part of the journey. On Instagram I share small moments from Tomeu Ferments and the creations taking shape.', cta: 'Follow the process on Instagram', imageAlt: 'Bartomeu sharing his experience with a group of people' },
@@ -132,9 +132,9 @@ const ca: Content = {
   gallery: {
     label: '03 / Una mirada al projecte', title: ['Ingredients senzills.', 'Transformacions vives.'], intro: 'Algunes imatges de l’univers de Tomeu Ferments: begudes fermentades, maceracions i conserves. Diferents maneres d’explorar el que el temps pot fer.',
     items: [
-      { image: 'kombucha', title: 'Fermentació', subtitle: 'Observar com la vida transforma.', alt: 'Mans sostenint un pot de kombutxa cobert amb una tela' },
-      { image: 'lemons', title: 'Maceració', subtitle: 'Aromes que troben el seu temps.', alt: 'Pots de vidre amb llimones i altres ingredients' },
-      { image: 'preserves', title: 'Conservació', subtitle: 'Donar una altra vida al que ens envolta.', alt: 'Tres pots de vidre amb verdures i conserves de diferents colors' },
+      { image: 'Kombucha.jpeg', title: 'Fermentació', subtitle: 'Observar com la vida transforma.', alt: 'Recipient de kombutxa amb aixeta, cobert amb una tela' },
+      { image: 'Maceracio.jpeg', title: 'Maceració', subtitle: 'Aromes que troben el seu temps.', alt: 'Tres botelles de vidre amb maceracions i taps de suro' },
+      { image: 'Conserva.jpeg', title: 'Conservació', subtitle: 'Donar una altra vida al que ens envolta.', alt: 'Pot de vidre amb pebres verds en conserva' },
     ],
   },
   sharing: { label: 'Una curiositat compartida', title: ['El procés també', 'es comparteix.'], text: 'Parlar del que feim, intercanviar idees i descobrir altres punts de vista també forma part del camí. A Instagram compartesc petits moments de Tomeu Ferments i les elaboracions que van prenent forma.', cta: 'Segueix el procés a Instagram', imageAlt: 'En Bartomeu compartint la seva experiència amb un grup de persones' },

@@ -26,7 +26,7 @@ The production output is `.output/public` and contains prerendered Spanish (`/es
 - `src/data/content.ts`: all three language versions, project email, Instagram link, and production URL.
 - `app/components/ProjectPage.vue`: shared accessible layout and mobile navigation.
 - `src/styles/global.css`: TailwindCSS, responsive styles, and global semantic theme variables.
-- `public/images/`: optimized copies of six existing photographs.
+- `public/images/`: project photographs. The gallery uses the user-provided `Kombucha.jpeg`, `Maceracio.jpeg`, and `Conserva.jpeg`; original optimized assets are retained.
 - `public/brand/`: original logos.
 
 The original brand colors are preserved as global variables: primary `#516d61`, secondary `#c35f47`, and background `#f9edd3`. Darker text variants improve contrast on cream backgrounds; the footer uses a darker terracotta variant to keep small white text readable. The existing contact email is `tomeuferments@gmail.com`. Contact uses a mail link; Instagram uses a direct external link. Neither is automatically submitted, synchronized, or embedded.

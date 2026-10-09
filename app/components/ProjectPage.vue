@@ -81,7 +81,7 @@ useHead(() => ({
 
       <section id="elaboraciones" class="gallery-section shell section-space" aria-labelledby="gallery-title">
         <div class="section-heading"><div><p class="eyebrow">{{ t.gallery.label }}</p><h2 id="gallery-title">{{ t.gallery.title[0] }}<br /><em>{{ t.gallery.title[1] }}</em></h2></div><p class="body-copy">{{ t.gallery.intro }}</p></div>
-        <div class="gallery-grid"><figure v-for="(item, index) in t.gallery.items" :key="item.image" class="gallery-item"><div class="gallery-photo"><img :src="`/images/${item.image}.jpg`" :alt="item.alt" width="1100" height="733" loading="lazy" decoding="async" /><span class="gallery-number" aria-hidden="true">0{{ index + 1 }}</span></div><figcaption><h3>{{ item.title }}</h3><p>{{ item.subtitle }}</p></figcaption></figure></div>
+        <div class="gallery-grid"><figure v-for="(item, index) in t.gallery.items" :key="item.image" class="gallery-item"><div class="gallery-photo"><img :src="`/images/${item.image}`" :alt="item.alt" width="1536" height="2048" loading="lazy" decoding="async" /><span class="gallery-number" aria-hidden="true">0{{ index + 1 }}</span></div><figcaption><h3>{{ item.title }}</h3><p>{{ item.subtitle }}</p></figcaption></figure></div>
       </section>
 
       <section class="sharing-section shell" aria-labelledby="sharing-title">
