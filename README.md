@@ -35,9 +35,9 @@ The story is adapted from the original OctoberCMS theme, especially `themes/tome
 
 ## Migration and local worktrees
 
-This migration is on `feature/reset`, created from `develop`. The existing `main` commit remains in Git history, preserving the OctoberCMS implementation.
+The migration was implemented on `feature/reset`, created from `develop`, and prepared for release as version `1.0.0`. The legacy OctoberCMS implementation remains in Git history at commit `c1dc3a4`.
 
-The original checkout at `C:/laragon/www/tomeuferments` has pre-existing uncommitted changes and is left untouched. The migration runs in the linked worktree `C:/laragon/www/tomeuferments-reset`; both folders share the same Git repository and remote. The separate `tomeuferments3` checkout is also untouched.
+The original checkout at `C:/laragon/www/tomeuferments` has pre-existing uncommitted changes. Its files are preserved at legacy commit `c1dc3a4` in detached HEAD state so `main` can advance to the Nuxt release without replacing the legacy working files. The migration runs in the linked worktree `C:/laragon/www/tomeuferments-reset`; both folders share the same Git repository and remote. The separate `tomeuferments3` checkout is also untouched.
 
 OctoberCMS PHP files, plugins, database configuration, Composer dependencies, recipes, forms, and their scripts are removed from the new branch. Existing credentials, environment files, user uploads, and the database are not copied into the static project. Original source photographs remain in the original checkout and Git history; the new branch only includes optimized assets selected for this presentation.
 
