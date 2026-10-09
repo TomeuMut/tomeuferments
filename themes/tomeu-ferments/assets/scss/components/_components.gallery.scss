@@ -1,6 +1,0 @@
-.c-gallery{
-    @apply grid grid-cols-4 gap-0 py-32;
-    & img {
-        @apply w-full h-[475px] object-cover;
-    }
-}
