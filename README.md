@@ -26,22 +26,24 @@ The production output is `.output/public` and contains prerendered Spanish (`/es
 - `src/data/content.ts`: all three language versions, project email, Instagram link, and production URL.
 - `app/components/ProjectPage.vue`: shared accessible layout and mobile navigation.
 - `src/styles/global.css`: TailwindCSS, responsive styles, and global semantic theme variables.
-- `public/images/`: optimized copies of six existing photographs.
+- `public/images/`: project photographs. The gallery uses the user-provided `Kombucha.jpeg`, `Maceracio.jpeg`, and `Conserva.jpeg`; original optimized assets are retained.
 - `public/brand/`: original logos.
 
 The original brand colors are preserved as global variables: primary `#516d61`, secondary `#c35f47`, and background `#f9edd3`. Darker text variants improve contrast on cream backgrounds; the footer uses a darker terracotta variant to keep small white text readable. The existing contact email is `tomeuferments@gmail.com`. Contact uses a mail link; Instagram uses a direct external link. Neither is automatically submitted, synchronized, or embedded.
 
 The story is adapted from the original OctoberCMS theme, especially `themes/tomeu-ferments/pages/index.htm`. It retains the 2017 origin, Bartomeu’s grandmother, fruit from the land, and the earlier introduction to craft beer through Rachid and Lorien. The public website could not be retrieved during implementation, so local source files are the content authority. Photographs illustrate the project without ingredient quantities, instructions, health claims, or claims that every photo depicts a specific named product.
 
-## Migration and local worktrees
+## Migration and legacy backup
 
 The migration was implemented on `feature/reset`, created from `develop`, and prepared for release as version `1.0.0`. The legacy OctoberCMS implementation remains in Git history at commit `c1dc3a4`.
 
-The original checkout at `C:/laragon/www/tomeuferments` has pre-existing uncommitted changes. Its files are preserved at legacy commit `c1dc3a4` in detached HEAD state so `main` can advance to the Nuxt release without replacing the legacy working files. The migration runs in the linked worktree `C:/laragon/www/tomeuferments-reset`; both folders share the same Git repository and remote. The separate `tomeuferments3` checkout is also untouched.
+The Nuxt application now runs in the original checkout at `C:/laragon/www/tomeuferments`, using its existing `.git` directory and the same `git@github.com:TomeuMut/tomeuferments.git` remote. A temporary linked worktree was used while preserving local OctoberCMS changes; it did not create another repository.
 
-OctoberCMS PHP files, plugins, database configuration, Composer dependencies, recipes, forms, and their scripts are removed from the new branch. Existing credentials, environment files, user uploads, and the database are not copied into the static project. Original source photographs remain in the original checkout and Git history; the new branch only includes optimized assets selected for this presentation.
+The previous OctoberCMS files, including pre-existing local changes and ignored runtime files, are preserved in `C:/laragon/www/tomeuferments-octobercms-backup`. A binary-compatible patch of tracked local changes is saved at `C:/laragon/www/tomeuferments-octobercms-local-changes.patch`. Both backups stay outside the Git repository and are not deployed. The separate `tomeuferments3` checkout is untouched.
 
-Do not switch the original dirty checkout to the migration branch without first preserving its local changes. To compare with the legacy version, use that existing checkout or inspect the previous commit in Git.
+OctoberCMS PHP files, plugins, database configuration, Composer dependencies, recipes, forms, and their scripts are removed from the new branch. Existing credentials, environment files, user uploads, and the database are not copied into the static project. Original source photographs remain in the legacy backup and Git history; the new branch includes selected presentation assets and the supplied gallery photographs.
+
+To compare with the legacy version, inspect the backup or commit `c1dc3a4`. Continue development in the original `tomeuferments` folder on a feature branch.
 
 ## Git Flow
 

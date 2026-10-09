@@ -1,4 +1,11 @@
-﻿# Changelog
+# Changelog
+
+## 1.0.1 - 2026-10-09
+
+- Replace the gallery images with the supplied personal photographs and update image descriptions in all three languages.
+- Correct the Spanish story to use "abuela" while preserving "padrina" in Catalan.
+- Document development in the original repository folder and preservation of the legacy OctoberCMS backup.
+- Retain the established serif typography.
 
 ## 1.0.0 - 2026-10-09
 
