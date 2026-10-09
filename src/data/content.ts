@@ -41,7 +41,7 @@ const es: Content = {
   story: {
     label: '01 / El origen', title: ['Todo empezó', 'con una curiosidad.'],
     paragraphs: [
-      'Soy Bartomeu. Empecé a fermentar en 2017, guiado por el saber de mi padrina y una idea sencilla: aprovechar la fruta del campo. Lo que nació como una manera de conservar se convirtió en un camino de descubrimiento.',
+      'Soy Bartomeu. Empecé a fermentar en 2017, guiado por el saber de mi abuela y una idea sencilla: aprovechar la fruta del campo. Lo que nació como una manera de conservar se convirtió en un camino de descubrimiento.',
       'La curiosidad venía de antes. Rachid, un compañero de FP y amigo que trabajaba en el Lorien, un bar de Palma, me había acercado al mundo de las cervezas artesanas. Después llegaron nuevos ingredientes, preguntas y formas de transformar lo cotidiano.',
       'Tomeu Ferments es el espacio donde se encuentran esa memoria y las ganas de experimentar. La vida rural, el producto de temporada y el gusto por las cosas hechas a mano marcan el ritmo. No se trata de correr, sino de observar, aprender y disfrutar del proceso.',
     ],
