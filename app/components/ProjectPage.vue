@@ -14,20 +14,43 @@ useHead(() => ({
   title: t.value.title,
   meta: [
     { name: 'description', content: t.value.description },
+    { name: 'author', content: 'Bartomeu · Tomeu Ferments' },
+    { name: 'robots', content: 'index, follow, max-image-preview:large' },
     { property: 'og:title', content: t.value.title },
     { property: 'og:description', content: t.value.description },
     { property: 'og:type', content: 'website' },
+    { property: 'og:site_name', content: project.name },
     { property: 'og:locale', content: t.value.locale },
+    ...languageOptions.filter(option => option.code !== props.language).map(option => ({ property: 'og:locale:alternate', content: content[option.code].locale })),
     { property: 'og:url', content: `${project.url}/${props.language}/` },
-    { property: 'og:image', content: `${project.url}/images/kombucha-hero.jpg` },
+    { property: 'og:image', content: `${project.url}/images/social-preview.jpg` },
+    { property: 'og:image:type', content: 'image/jpeg' },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
     { property: 'og:image:alt', content: t.value.hero.imageAlt },
     { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: t.value.title },
+    { name: 'twitter:description', content: t.value.description },
+    { name: 'twitter:image', content: `${project.url}/images/social-preview.jpg` },
+    { name: 'twitter:image:alt', content: t.value.hero.imageAlt },
   ],
   link: [
     { rel: 'canonical', href: `${project.url}/${props.language}/` },
     ...languageOptions.map(option => ({ rel: 'alternate' as const, hreflang: option.code, href: `${project.url}/${option.code}/` })),
     { rel: 'alternate', hreflang: 'x-default', href: `${project.url}/es/` },
   ],
+  script: [{
+    key: 'project-schema',
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'Person', '@id': `${project.url}/#bartomeu`, name: 'Bartomeu', url: `${project.url}/es/#historia`, image: `${project.url}/images/tomeu.jpg`, sameAs: [project.instagram] },
+        { '@type': 'WebSite', '@id': `${project.url}/#website`, url: `${project.url}/`, name: project.name, inLanguage: languageOptions.map(option => option.code), creator: { '@id': `${project.url}/#bartomeu` } },
+        { '@type': 'WebPage', '@id': `${project.url}/${props.language}/#webpage`, url: `${project.url}/${props.language}/`, name: t.value.title, description: t.value.description, inLanguage: props.language, isPartOf: { '@id': `${project.url}/#website` }, about: { '@id': `${project.url}/#bartomeu` }, primaryImageOfPage: { '@type': 'ImageObject', url: `${project.url}/images/social-preview.jpg`, width: 1200, height: 630 }, hasPart: navigation.value.map(item => ({ '@type': 'WebPageElement', '@id': `${project.url}/${props.language}/#${item.id}`, name: item.label })) },
+      ],
+    }).replace(/</g, '\\u003c'),
+  }],
 }));
 </script>
 
