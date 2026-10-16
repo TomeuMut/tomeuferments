@@ -16,6 +16,7 @@ Open http://127.0.0.1:3001/es/. The default port avoids interfering with the por
 ```sh
 npm run check
 npm run build
+npm run check:seo
 npm run preview
 ```
 
@@ -61,7 +62,7 @@ Local commits are allowed. Pushes, merges, tags, and deployment require an expli
 
 Canonical and alternate language links use `https://tomeuferments.es`. No secrets, database, SMTP service, or runtime API are required. No deployment or DNS changes are performed by preparing this repository.
 
-The old recipe and legal URLs are intentionally not recreated. Before replacing the live site, review indexed legacy URLs and decide which should redirect to a genuinely equivalent section and which should return 404. No analytics, third-party embeds, or nonessential cookies are added; the site has no cookie banner.
+Legacy introduction and contact aliases now have explicit permanent redirects in `vercel.json`. Retired recipe, recruitment and legal content has no equivalent replacement and must return a real 404, rather than redirecting to the homepage. The evidence and mapping are recorded in `docs/legacy-url-map.json`. No analytics, third-party embeds, or nonessential cookies are added; the site has no cookie banner.
 
 ## Validation
 
@@ -83,3 +84,12 @@ Before publishing, check the production domain, HTTPS, preview indexing controls
 ## Design review
 
 The focused accessibility, navigation, responsive-layout and content improvements are recorded in [docs/design-review.md](docs/design-review.md). The review preserves the existing visual identity and all three languages. Type checking, static generation and generated-output anchor/image checks pass; the final Impeccable detector reports no findings. Browser screenshots and interactive verification remain pending because no browser was connected during this run.
+
+
+## SEO migration and error pages
+
+See [docs/seo-migration.md](docs/seo-migration.md) for the OctoberCMS inventory, redirect rationale, metadata validation, observed custom-domain issue and deployment/Search Console follow-up. The sitemap and robots already describe the three canonical language pages; automated checks now keep those contracts aligned with the generated HTML.
+
+`npm run build` runs a postbuild step that replaces Nuxt's blank static 404 shell with a branded, no-JavaScript error document, then checks all public SEO artifacts. `npm run check:seo` reruns those checks against the existing output. `app/error.vue` supplies the localized interactive error view; the static fallback defaults to Spanish and links to all three languages. Error copy is centralized in `src/data/content.ts`. Node 22.12+ supports the built-in type-stripping flag used by these scripts; no new dependency is required.
+
+Actual hosting status codes, redirect chains, custom-domain association and TLS must be verified on Vercel after publication. Local static checks do not prove production HTTP 404 responses or successful domain setup. No Search Console access or account changes are included.
