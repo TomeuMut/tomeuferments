@@ -8,11 +8,11 @@ This is not a complete export of Google's index. Public search did not expose a 
 
 The preserved backup was read only. No database, credentials or private CMS data were copied into the public website.
 
-## Domain blocker observed on 2026-10-16
+## Initial domain blocker observed on 2026-10-16 (resolved)
 
 From this environment, Python's TLS client and Windows curl both failed the HTTPS handshake for the custom domain. `http://tomeuferments.es/` returned a Vercel HTTP 404 response containing `DEPLOYMENT_NOT_FOUND`. DNS resolved the root A record to `216.198.79.1`.
 
-This points to a domain/deployment association or TLS problem that must be checked in Vercel, not an HTML metadata fix. The observation is not proof of universal downtime. Verify the actual production deployment URL, Settings → Domains for root and www, and the exact DNS records Vercel requests. Do not replace DNS with a generic IP or change mail records. No Vercel account, DNS or production deployment changes were performed in this task.
+This points to a domain/deployment association or TLS problem that must be checked in Vercel, not an HTML metadata fix. The observation is not proof of universal downtime. Verify the actual production deployment URL, Settings â†’ Domains for root and www, and the exact DNS records Vercel requests. Do not replace DNS with a generic IP or change mail records. No Vercel account, DNS or production deployment changes were performed in this task.
 
 ## URL migration policy
 
@@ -28,7 +28,7 @@ This points to a domain/deployment association or TLS problem that must be check
 | Careers and recruitment aliases | Genuine 404; no recruitment content remains |
 | Retired legal/privacy/cookie document aliases | Genuine 404; no equivalent document is currently published |
 
-Both slash variants are explicitly covered for redirectable legacy aliases. Specific www redirects precede generic host normalization and go directly to the canonical host and relevant section. `permanent: true` uses Vercel's permanent redirect behavior (normally HTTP 308); inspect actual deployed responses and any automatic trailing-slash hop.
+Both slash variants are explicitly covered for redirectable legacy aliases. Specific apex-domain redirects precede generic host normalization and go directly to the canonical host and relevant section. `permanent: true` uses Vercel's permanent redirect behavior (normally HTTP 308); inspect actual deployed responses and any automatic trailing-slash hop.
 
 Do not redirect deleted recipe details or unknown paths to the homepage. Such redirects do not satisfy the user's original request for content and can be treated as soft 404s. Keep retired paths crawlable so search engines can observe their actual status; do not hide them with robots.txt.
 
@@ -40,7 +40,7 @@ The old `#contact-form` anchor is preserved inside the current contact section. 
 - The existing robots.txt allows public crawling and points to the production sitemap. No speculative crawler restrictions were added.
 - Public pages have unique localized titles/descriptions, self-canonical URLs and reciprocal HTML hreflang. No `meta keywords` or fabricated structured data were added.
 - Existing Person, WebSite and WebPage JSON-LD is retained and checked against the current language and canonical URL.
-- OG and Twitter use the existing 1200 × 630 JPEG, with dimensions and localized alternative text. `og:image:secure_url` was added; the actual JPEG dimensions are validated against the metadata.
+- OG and Twitter use the existing 1200 Ã— 630 JPEG, with dimensions and localized alternative text. `og:image:secure_url` was added; the actual JPEG dimensions are validated against the metadata.
 - Search Console ownership verification must remain valid. No verification token was found in the inspected public theme layouts; verify the account's actual DNS/HTML method rather than inventing one.
 
 ## Real error pages
@@ -59,19 +59,19 @@ The fallback is not a new indexable content page: it has no canonical-to-home ta
 - Indexability of public pages, social metadata and JSON-LD.
 - Sitemap targets, alternates, robots rules and local image assets.
 - Complete no-JavaScript 404 markup, noindex, stylesheet and valid recovery destinations.
-- Redirect coverage, permanent settings, actual target sections, www rule ordering and absence of blanket recipe redirects.
+- Redirect coverage, permanent settings, actual target sections, apex-domain rule ordering and absence of blanket recipe redirects.
 - Actual social-image dimensions.
 
-Type checking, static generation and these assertions passed. The final source review found no blocking routing errors. Browser screenshots, actual focus behavior, production HTTP statuses and TLS still require validation on a working deployment.
+Type checking, static generation and these assertions passed. The original artifact checks did not detect the later hosting redirect loop. Release 1.0.6 adds a canonical-host redirect assertion. Browser screenshots and actual focus behavior still require validation; verify live assets as well as page HTTP statuses after each routing change.
 
 ## Deployment and Search Console follow-up
 
-1. Resolve the custom domain association and HTTPS first, preserving existing email DNS records.
+1. Keep the Vercel domain redirect aligned with the WWW canonical origin, preserving existing email DNS records.
 2. Publish the feature through the repository's approved release workflow.
 3. Verify HTTP 200 for `/es/`, `/en/`, `/ca/`, robots, sitemap and OG image.
 4. Verify permanent redirects for every mapped alias, with and without slash and on www. Check the final section and redirect chain length.
 5. Verify HTTP 404, visible HTML and noindex for an unknown path and real removed recipe/legal/careers examples. Test without JavaScript.
-6. Submit `https://tomeuferments.es/sitemap.xml` in Search Console and inspect the canonical pages and representative old URLs. This is the same domain, so a domain Change of Address request is not warranted.
+6. Submit `https://www.tomeuferments.es/sitemap.xml` in Search Console and inspect the canonical pages and representative old URLs. This is the same domain, so a domain Change of Address request is not warranted.
 7. Monitor indexing, crawled-not-indexed reports, 404 reports and external links. Keep redirects long term and add confirmed aliases from account data. Do not claim immediate reindexing or restored rankings.
 
 References: [Google site moves](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes), [Google crawling errors and soft 404](https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors), [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json).
@@ -82,3 +82,7 @@ References: [Google site moves](https://developers.google.com/search/docs/crawli
 Release 1.0.3 failed its Vercel postbuild because it assumed the local `.output/public` directory. The shared resolver now selects `.vercel/output/static` when `VERCEL=1`, and both finalization and checks use that directory. Vercel build-output routing includes a missing-file fallback with status 404 after the filesystem handler. The build was reproduced with Nitro's `vercel-static` preset and validated locally before publishing the hotfix.
 
 The 1.0.4 live HTTP check also exposed language pages returning 404 while assets and payloads were available. The generated trailing-slash aliases for language HTML are now removed, and canonical language URLs explicitly resolve to their physical index.html files before the filesystem/missing-page fallback. Automated Vercel-mode checks cover that routing order.
+
+## Production domain correction (1.0.6)
+
+The custom domain now resolves over HTTPS. Live requests confirmed that Vercel redirects the apex domain to WWW. The previous application rule redirected WWW asset requests back to the apex, creating an infinite HTTP 308 loop for CSS, JavaScript and images. The canonical origin and application redirects now follow `https://www.tomeuferments.es`. Verify CSS, JavaScript, logo and gallery images on that host after deployment; successful HTML responses alone are insufficient.

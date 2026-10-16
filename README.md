@@ -60,7 +60,7 @@ Local commits are allowed. Pushes, merges, tags, and deployment require an expli
 4. Add `tomeuferments.es` as a custom domain, then apply the exact DNS records Vercel provides at the current external DNS provider. Keep existing email records.
 5. Verify the domain, HTTPS, root redirect, all three languages, assets, and contact links before redirecting production traffic.
 
-Canonical and alternate language links use `https://tomeuferments.es`. No secrets, database, SMTP service, or runtime API are required. No deployment or DNS changes are performed by preparing this repository.
+Canonical and alternate language links use `https://www.tomeuferments.es`. No secrets, database, SMTP service, or runtime API are required. No deployment or DNS changes are performed by preparing this repository.
 
 Legacy introduction and contact aliases now have explicit permanent redirects in `vercel.json`. Retired recipe, recruitment and legal content has no equivalent replacement and must return a real 404, rather than redirecting to the homepage. The evidence and mapping are recorded in `docs/legacy-url-map.json`. No analytics, third-party embeds, or nonessential cookies are added; the site has no cookie banner.
 
@@ -78,7 +78,7 @@ JSON-LD describes the real Person, WebSite, and localized WebPage, including lan
 
 Vercel permanently redirects `/` to `/es/` and normalizes URLs with trailing slashes. The Nuxt root redirect also uses permanent semantics. Validate the actual HTTP redirect after deployment: static HTML alone cannot send an HTTP status. Icons include the original SVG, a 48 × 48 PNG favicon, and a 180 × 180 Apple touch icon, using the existing monogram and colors. On Windows, regenerate the raster icons and social crop from existing assets using `powershell -File scripts/generate-seo-assets.ps1` from the repository root.
 
-Before publishing, check the production domain, HTTPS, preview indexing controls in Vercel, and legacy indexed URLs. After publishing, submit `https://tomeuferments.es/sitemap.xml` in Google Search Console, inspect all three localized URLs, and validate structured data and social previews. These external actions require access to the relevant accounts and are not performed by a local build. No rankings or rich results are guaranteed.
+Before publishing, check the production domain, HTTPS, preview indexing controls in Vercel, and legacy indexed URLs. After publishing, submit `https://www.tomeuferments.es/sitemap.xml` in Google Search Console, inspect all three localized URLs, and validate structured data and social previews. These external actions require access to the relevant accounts and are not performed by a local build. No rankings or rich results are guaranteed.
 
 
 ## Design review

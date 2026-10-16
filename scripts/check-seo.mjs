@@ -85,13 +85,15 @@ for (const anchor of tags(error, 'a')) {
 for (const link of tags(error, 'link').filter(item => item.rel === 'stylesheet')) await access(new URL(link.href.replace(/^\//, ''), output));
 
 const config = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
+assert.equal(project.url, 'https://www.tomeuferments.es', 'Canonical host matches Vercel domain normalization');
+assert.ok(!config.redirects.some(rule => rule.has?.some(condition => condition.type === 'host' && condition.value === 'www.tomeuferments.es')), 'Canonical WWW host must not redirect assets back to the apex domain');
 const mapping = JSON.parse(await readFile(new URL('docs/legacy-url-map.json', root), 'utf8'));
 for (const rule of mapping.redirects) {
   for (const source of [rule.source, `${rule.source}/`]) {
     assert.ok(config.redirects.some(item => item.source === source && item.destination === rule.destination && item.permanent === true), `Permanent redirect missing: ${source}`);
-    const hostRule = config.redirects.findIndex(item => item.source === source && item.has?.some(condition => condition.type === 'host' && condition.value === 'www.tomeuferments.es'));
+    const hostRule = config.redirects.findIndex(item => item.source === source && item.has?.some(condition => condition.type === 'host' && condition.value === 'tomeuferments.es'));
     const normalization = config.redirects.findIndex(item => item.source === '/:path*' && item.has);
-    assert.ok(hostRule >= 0 && hostRule < normalization, `WWW legacy redirect must precede host normalization: ${source}`);
+    assert.ok(hostRule >= 0 && hostRule < normalization, `Apex legacy redirect must precede host normalization: ${source}`);
     assert.equal(config.redirects[hostRule].destination, new URL(rule.destination, project.url).href);
   }
   const destination = new URL(rule.destination, project.url);
