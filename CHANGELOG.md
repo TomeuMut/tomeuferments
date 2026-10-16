@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5 - 2026-10-16
+
+- Fix canonical ES/EN/CA URL routing in Vercel's generated build-output configuration.
+- Keep physical language HTML addressable instead of hiding it behind trailing-slash aliases.
+- Assert that language routes resolve before the missing-page fallback.
+
 ## 1.0.4 - 2026-10-16
 
 - Fix SEO postbuild scripts to use Nitro's Vercel static output instead of the local output path.

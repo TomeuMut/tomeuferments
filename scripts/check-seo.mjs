@@ -121,6 +121,9 @@ if (process.env.VERCEL) {
   const filesystem = buildConfig.routes.findIndex(route => route.handle === 'filesystem');
   const missing = buildConfig.routes.findIndex(route => route.status === 404 && route.dest === '/404.html');
   assert.ok(filesystem >= 0 && missing > filesystem, 'Vercel missing-route response follows existing files and returns HTTP 404');
+  const languageRoute = buildConfig.routes.findIndex(route => route.src === '^/(es|en|ca)/$' && route.dest === '/$1/index.html');
+  assert.ok(languageRoute >= 0 && languageRoute < filesystem, 'Canonical language URLs resolve to physical HTML before the fallback');
+  for (const { code } of languageOptions) assert.ok(!buildConfig.overrides?.[`${code}/index.html`], 'Language HTML must not be hidden behind a trailing-slash alias');
 }
 console.log('Sitemap, robots, static 404, legacy URL mapping, redirect targets and OG image dimensions passed.');
 console.log('Hosting HTTP status codes and domain/TLS must also be verified after deployment.');
