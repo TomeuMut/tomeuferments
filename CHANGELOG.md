@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.3 - 2026-10-16
+
+- Add evidence-based permanent redirects for legacy OctoberCMS introduction and contact aliases.
+- Preserve retired recipe, recruitment and legal URLs as missing content instead of redirecting them to unrelated pages.
+- Add branded static and localized Nuxt error pages, noindex rules and legacy contact-anchor compatibility.
+- Add secure Open Graph image metadata and automated sitemap, robots, canonical, hreflang, social image and redirect checks.
+- Document the custom-domain/TLS issue and remaining production/Search Console verification.
+
+Validation: type checking, static generation and automated SEO checks passed. Hosting HTTP behavior and the custom domain require post-deployment verification.
+
 ## 1.0.2 - 2026-10-16
 
 - Improve localized SEO metadata, social previews, icons and language alternates.
