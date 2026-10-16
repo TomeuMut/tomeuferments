@@ -75,3 +75,8 @@ Type checking, static generation and these assertions passed. The final source r
 7. Monitor indexing, crawled-not-indexed reports, 404 reports and external links. Keep redirects long term and add confirmed aliases from account data. Do not claim immediate reindexing or restored rankings.
 
 References: [Google site moves](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes), [Google crawling errors and soft 404](https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors), [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json).
+
+
+## Hosting output hotfix
+
+Release 1.0.3 failed its Vercel postbuild because it assumed the local `.output/public` directory. The shared resolver now selects `.vercel/output/static` when `VERCEL=1`, and both finalization and checks use that directory. Vercel build-output routing includes a missing-file fallback with status 404 after the filesystem handler. The build was reproduced with Nitro's `vercel-static` preset and validated locally before publishing the hotfix.
