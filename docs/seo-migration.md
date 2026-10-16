@@ -80,3 +80,5 @@ References: [Google site moves](https://developers.google.com/search/docs/crawli
 ## Hosting output hotfix
 
 Release 1.0.3 failed its Vercel postbuild because it assumed the local `.output/public` directory. The shared resolver now selects `.vercel/output/static` when `VERCEL=1`, and both finalization and checks use that directory. Vercel build-output routing includes a missing-file fallback with status 404 after the filesystem handler. The build was reproduced with Nitro's `vercel-static` preset and validated locally before publishing the hotfix.
+
+The 1.0.4 live HTTP check also exposed language pages returning 404 while assets and payloads were available. The generated trailing-slash aliases for language HTML are now removed, and canonical language URLs explicitly resolve to their physical index.html files before the filesystem/missing-page fallback. Automated Vercel-mode checks cover that routing order.
