@@ -13,6 +13,27 @@ export const languageOptions = [
 export type Language = typeof languageOptions[number]['code'];
 export const isLanguage = (value: unknown): value is Language => languageOptions.some(item => item.code === value);
 
+export const errorContent = {
+  es: {
+    title: 'Esta página ya no está aquí.',
+    text: 'Puede que el enlace haya cambiado o que la página se haya retirado. Las recetas de la web anterior ya no están disponibles.',
+    home: 'Conocer el proyecto', gallery: 'Ver las elaboraciones', contact: 'Escribir a Bartomeu',
+    unavailable: 'No hemos podido abrir esta página.', retry: 'Vuelve a intentarlo en unos minutos o visita el inicio.',
+  },
+  en: {
+    title: 'This page is no longer here.',
+    text: 'The link may have changed or the page may have been removed. Recipes from the previous website are no longer available.',
+    home: 'Discover the project', gallery: 'View the creations', contact: 'Write to Bartomeu',
+    unavailable: 'We could not open this page.', retry: 'Try again in a few minutes or visit the homepage.',
+  },
+  ca: {
+    title: 'Aquesta pàgina ja no és aquí.',
+    text: 'Pot ser que l’enllaç hagi canviat o que la pàgina s’hagi retirat. Les receptes de la web anterior ja no estan disponibles.',
+    home: 'Conèixer el projecte', gallery: 'Veure les elaboracions', contact: 'Escriure a en Bartomeu',
+    unavailable: 'No hem pogut obrir aquesta pàgina.', retry: 'Torna-ho a provar d’aquí a uns minuts o visita l’inici.',
+  },
+} satisfies Record<Language, { title: string; text: string; home: string; gallery: string; contact: string; unavailable: string; retry: string }>;
+
 type Content = {
   title: string; description: string; locale: string;
   skip: string; home: string; language: string; openMenu: string; closeMenu: string;

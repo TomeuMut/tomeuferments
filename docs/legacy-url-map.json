@@ -1,0 +1,19 @@
+{
+  "source": "Legacy OctoberCMS theme at commit c1dc3a4 and the preserved read-only backup",
+  "limits": "Theme declarations prove route names, not historical indexing, enabled sites, locale prefixes, or recipe slugs. Search Console and old access logs are needed for a complete published URL inventory.",
+  "redirects": [
+    { "source": "/sobre-nosotros", "destination": "/es/#historia", "evidence": "pages/about.htm:1", "reason": "Project introduction consolidated into the story section" },
+    { "source": "/about", "destination": "/en/#historia", "evidence": "pages/about.htm:6", "reason": "Declared English introduction alias" },
+    { "source": "/uber", "destination": "/en/#historia", "evidence": "pages/about.htm:7", "reason": "Declared German alias; English is the documented fallback because no German page exists" },
+    { "source": "/contact", "destination": "/es/#contacto", "evidence": "pages/contacto.htm:1,6", "reason": "Shared base/English path; use the current default Spanish page when no locale context is available" },
+    { "source": "/kontakt", "destination": "/en/#contacto", "evidence": "pages/contacto.htm:7", "reason": "Declared German contact alias; English fallback" }
+  ],
+  "removed": [
+    { "paths": ["/receptes", "/recetas", "/recipes", "/receptes/:slug", "/recetas/:slug", "/recipes/:slug"], "status": 404, "evidence": "pages/receta.htm:3,6,7; pages/receta-interior.htm:3,7,8", "reason": "Recipe instructions were removed; the photo gallery is not equivalent content" },
+    { "paths": ["/trabaja-con-nosotros", "/careers", "/karriere"], "status": 404, "evidence": "pages/work-with-us.htm:1,6,7", "reason": "Recruitment form removed; no recruitment content exists on the personal website" },
+    { "paths": ["/aviso-legal", "/legal-notice", "/rechtlicher-hinweis"], "status": 404, "evidence": "pages/aviso-legal.htm:3,6,7", "reason": "No equivalent legal document is published" },
+    { "paths": ["/politica-de-privacidad", "/privacy-policy", "/datenschutzrichtlinie"], "status": 404, "evidence": "pages/politica-de-privacidad.htm:3,6,7", "reason": "No equivalent privacy document is published" },
+    { "paths": ["/politica-de-cookies", "/cookie-policy", "/cookie-richtlinie"], "status": 404, "evidence": "pages/politica-de-cookies.htm:3,6,7", "reason": "No equivalent cookie policy is published" }
+  ],
+  "fragments": [{ "source": "#contact-form", "destination": "#contacto", "implementation": "Preserved contact-form anchor inside the current contact section; fragments never reach the HTTP server" }]
+}

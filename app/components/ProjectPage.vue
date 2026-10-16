@@ -53,6 +53,7 @@ useHead(() => ({
     ...languageOptions.filter(option => option.code !== props.language).map(option => ({ property: 'og:locale:alternate', content: content[option.code].locale })),
     { property: 'og:url', content: `${project.url}/${props.language}/` },
     { property: 'og:image', content: `${project.url}/images/social-preview.jpg` },
+    { property: 'og:image:secure_url', content: `${project.url}/images/social-preview.jpg` },
     { property: 'og:image:type', content: 'image/jpeg' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
@@ -143,6 +144,7 @@ useHead(() => ({
     </main>
 
     <footer id="contacto" tabindex="-1" class="contact-section" aria-labelledby="contact-title">
+      <span id="contact-form" aria-hidden="true" />
       <div class="shell">
         <div class="contact-grid"><div><p class="eyebrow">{{ t.contact.label }}</p><h2 id="contact-title">{{ t.contact.title[0] }}<br /><em>{{ t.contact.title[1] }}</em></h2></div><div class="contact-copy"><p class="body-copy">{{ t.contact.text }}</p><a :href="`mailto:${project.email}`" class="contact-email" :aria-label="`${t.contact.emailLabel}: ${project.email}`"><PhEnvelopeSimple :size="22" aria-hidden="true" focusable="false" />{{ project.email }}<PhArrowUpRight :size="20" aria-hidden="true" focusable="false" /></a><a :href="project.instagram" class="contact-instagram"><PhInstagramLogo :size="19" aria-hidden="true" focusable="false" />{{ t.contact.instagram }}</a></div></div>
         <div class="footer-brand-row"><a href="#inicio" :aria-label="`${project.name} · ${t.home}`"><img src="/brand/logo-white.svg" alt="Tomeu Ferments" width="300" height="69" loading="lazy" /></a><p>{{ t.contact.note }}</p></div>

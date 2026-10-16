@@ -5,6 +5,213 @@
   "installCommand": "npm ci",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/", "destination": "/es/", "permanent": true }
+    {
+      "source": "/",
+      "destination": "https://tomeuferments.es/es/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/sobre-nosotros",
+      "destination": "https://tomeuferments.es/es/#historia",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/sobre-nosotros/",
+      "destination": "https://tomeuferments.es/es/#historia",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/about",
+      "destination": "https://tomeuferments.es/en/#historia",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/about/",
+      "destination": "https://tomeuferments.es/en/#historia",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/uber",
+      "destination": "https://tomeuferments.es/en/#historia",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/uber/",
+      "destination": "https://tomeuferments.es/en/#historia",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/contact",
+      "destination": "https://tomeuferments.es/es/#contacto",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/contact/",
+      "destination": "https://tomeuferments.es/es/#contacto",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/kontakt",
+      "destination": "https://tomeuferments.es/en/#contacto",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/kontakt/",
+      "destination": "https://tomeuferments.es/en/#contacto",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tomeuferments.es"
+        }
+      ],
+      "destination": "https://tomeuferments.es/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/sobre-nosotros",
+      "destination": "/es/#historia",
+      "permanent": true
+    },
+    {
+      "source": "/sobre-nosotros/",
+      "destination": "/es/#historia",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/en/#historia",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/en/#historia",
+      "permanent": true
+    },
+    {
+      "source": "/uber",
+      "destination": "/en/#historia",
+      "permanent": true
+    },
+    {
+      "source": "/uber/",
+      "destination": "/en/#historia",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/es/#contacto",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/es/#contacto",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/en/#contacto",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/",
+      "destination": "/en/#contacto",
+      "permanent": true
+    }
+  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/404.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/200.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    }
   ]
 }
