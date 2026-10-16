@@ -2,5 +2,9 @@
   "framework": "nuxtjs",
   "buildCommand": "npm run build",
   "outputDirectory": ".output/public",
-  "installCommand": "npm ci"
+  "installCommand": "npm ci",
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/", "destination": "/es/", "permanent": true }
+  ]
 }

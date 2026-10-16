@@ -27,19 +27,19 @@ type Content = {
 };
 
 const es: Content = {
-  title: 'Tomeu Ferments · Tiempo, tradición y curiosidad',
-  description: 'El proyecto personal de Bartomeu en Mallorca. Desde 2017 explorando la fermentación, las maceraciones y los sabores de siempre, con pasión y paciencia.',
+  title: 'Tomeu Ferments | Fermentación artesanal en Mallorca',
+  description: 'Descubre Tomeu Ferments, el proyecto personal de Bartomeu en Mallorca: fermentación artesanal, kombucha, maceraciones y conservas desde 2017.',
   locale: 'es_ES', skip: 'Saltar al contenido', home: 'Inicio', language: 'Idioma', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú',
   nav: ['El proyecto', 'La filosofía', 'Elaboraciones', 'Hablemos'],
   hero: {
-    label: 'Mallorca · Fermentando desde 2017', title: ['Lo bueno', 'lleva tiempo.'],
+    label: 'Mallorca · Fermentando desde 2017', title: ['Fermentación artesanal', 'sin prisas.'],
     text: 'Un proyecto personal sobre fermentación, maceraciones y sabores que guardan memoria. Hecho con las manos, con curiosidad y sin prisas.',
     cta: 'Conoce el proyecto', note: 'Pasión, paciencia y un poco de vida en cada tarro.',
     imageAlt: 'Primer plano de una kombucha de color ámbar en fermentación', caption: 'El tiempo también es un ingrediente.', location: 'Desde 2017 · Mallorca',
   },
   ribbon: ['Procesos naturales', 'Saberes de siempre', 'Curiosidad sin fin'],
   story: {
-    label: '01 / El origen', title: ['Todo empezó', 'con una curiosidad.'],
+    label: '01 / El origen', title: ['Tomeu Ferments:', 'el origen del proyecto.'],
     paragraphs: [
       'Soy Bartomeu. Empecé a fermentar en 2017, guiado por el saber de mi abuela y una idea sencilla: aprovechar la fruta del campo. Lo que nació como una manera de conservar se convirtió en un camino de descubrimiento.',
       'La curiosidad venía de antes. Rachid, un compañero de FP y amigo que trabajaba en el Lorien, un bar de Palma, me había acercado al mundo de las cervezas artesanas. Después llegaron nuevos ingredientes, preguntas y formas de transformar lo cotidiano.',
@@ -57,7 +57,7 @@ const es: Content = {
     ],
   },
   gallery: {
-    label: '03 / Un vistazo al proyecto', title: ['Ingredientes sencillos.', 'Transformaciones vivas.'],
+    label: '03 / Un vistazo al proyecto', title: ['Fermentados, maceraciones', 'y conservas.'],
     intro: 'Algunas imágenes del universo de Tomeu Ferments: bebidas fermentadas, maceraciones y conservas. Distintas formas de explorar lo que el tiempo puede hacer.',
     items: [
       { image: 'Kombucha.jpeg', title: 'Fermentación', subtitle: 'Observar cómo la vida transforma.', alt: 'Recipiente de kombucha con grifo, cubierto con una tela' },
@@ -70,14 +70,14 @@ const es: Content = {
 };
 
 const en: Content = {
-  title: 'Tomeu Ferments · Time, tradition and curiosity',
-  description: 'Bartomeu’s personal project in Mallorca. Exploring fermentation, maceration and traditional flavours since 2017, with passion and patience.',
+  title: 'Tomeu Ferments | Artisan fermentation in Mallorca',
+  description: 'Discover Tomeu Ferments, Bartomeu’s personal project in Mallorca: artisan fermentation, kombucha, macerations and preserves, explored with curiosity since 2017.',
   locale: 'en_GB', skip: 'Skip to content', home: 'Home', language: 'Language', openMenu: 'Open menu', closeMenu: 'Close menu',
   nav: ['The project', 'The philosophy', 'Creations', 'Let’s talk'],
-  hero: { label: 'Mallorca · Fermenting since 2017', title: ['Good things', 'take time.'], text: 'A personal project about fermentation, maceration and flavours that carry memories. Made by hand, with curiosity and without rushing.', cta: 'Discover the project', note: 'Passion, patience and a little life in every jar.', imageAlt: 'Close-up of amber kombucha fermenting in a jar', caption: 'Time is an ingredient, too.', location: 'Since 2017 · Mallorca' },
+  hero: { label: 'Mallorca · Fermenting since 2017', title: ['Artisan fermentation', 'without rushing.'], text: 'A personal project about fermentation, maceration and flavours that carry memories. Made by hand, with curiosity and without rushing.', cta: 'Discover the project', note: 'Passion, patience and a little life in every jar.', imageAlt: 'Close-up of amber kombucha fermenting in a jar', caption: 'Time is an ingredient, too.', location: 'Since 2017 · Mallorca' },
   ribbon: ['Natural processes', 'Traditional knowledge', 'Endless curiosity'],
   story: {
-    label: '01 / The beginning', title: ['It all began', 'with curiosity.'],
+    label: '01 / The beginning', title: ['Tomeu Ferments:', 'the project’s origins.'],
     paragraphs: [
       'I’m Bartomeu. I started fermenting in 2017, guided by my grandmother’s knowledge and a simple idea: making the most of fruit from the land. What began as a way of preserving became a journey of discovery.',
       'The curiosity started earlier. Rachid, a friend and classmate from vocational training who worked at Lorien, a bar in Palma, had introduced me to craft beer. New ingredients, questions and ways of transforming everyday things followed.',
@@ -94,7 +94,7 @@ const en: Content = {
     ],
   },
   gallery: {
-    label: '03 / A glimpse of the project', title: ['Simple ingredients.', 'Living transformations.'], intro: 'A few images from the world of Tomeu Ferments: fermented drinks, macerations and preserves. Different ways of exploring what time can do.',
+    label: '03 / A glimpse of the project', title: ['Fermented drinks,', 'macerations and preserves.'], intro: 'A few images from the world of Tomeu Ferments: fermented drinks, macerations and preserves. Different ways of exploring what time can do.',
     items: [
       { image: 'Kombucha.jpeg', title: 'Fermentation', subtitle: 'Watching life transform ingredients.', alt: 'Kombucha vessel with a tap, covered with a cloth' },
       { image: 'Maceracio.jpeg', title: 'Maceration', subtitle: 'Giving aromas time to develop.', alt: 'Three glass bottles of macerations with cork stoppers' },
@@ -106,11 +106,11 @@ const en: Content = {
 };
 
 const ca: Content = {
-  title: 'Tomeu Ferments · Temps, tradició i curiositat',
-  description: 'El projecte personal d’en Bartomeu a Mallorca. Des del 2017 explorant la fermentació, les maceracions i els sabors de sempre, amb passió i paciència.',
+  title: 'Tomeu Ferments | Fermentació artesanal a Mallorca',
+  description: 'Descobreix Tomeu Ferments, el projecte personal d’en Bartomeu a Mallorca: fermentació artesanal, kombutxa, maceracions i conserves des del 2017.',
   locale: 'ca_ES', skip: 'Ves al contingut', home: 'Inici', language: 'Idioma', openMenu: 'Obrir el menú', closeMenu: 'Tancar el menú',
   nav: ['El projecte', 'La filosofia', 'Elaboracions', 'Parlem-ne'],
-  hero: { label: 'Mallorca · Fermentant des del 2017', title: ['Les coses bones', 'volen temps.'], text: 'Un projecte personal sobre fermentació, maceracions i sabors que guarden memòria. Fet amb les mans, amb curiositat i sense presses.', cta: 'Coneix el projecte', note: 'Passió, paciència i un poc de vida a cada pot.', imageAlt: 'Primer pla d’una kombutxa de color ambre en fermentació', caption: 'El temps també és un ingredient.', location: 'Des del 2017 · Mallorca' },
+  hero: { label: 'Mallorca · Fermentant des del 2017', title: ['Fermentació artesanal', 'sense presses.'], text: 'Un projecte personal sobre fermentació, maceracions i sabors que guarden memòria. Fet amb les mans, amb curiositat i sense presses.', cta: 'Coneix el projecte', note: 'Passió, paciència i un poc de vida a cada pot.', imageAlt: 'Primer pla d’una kombutxa de color ambre en fermentació', caption: 'El temps també és un ingredient.', location: 'Des del 2017 · Mallorca' },
   ribbon: ['Processos naturals', 'Sabers de sempre', 'Curiositat sense fi'],
   story: {
     label: '01 / L’origen', title: ['Tot va començar', 'amb una curiositat.'],
@@ -130,7 +130,7 @@ const ca: Content = {
     ],
   },
   gallery: {
-    label: '03 / Una mirada al projecte', title: ['Ingredients senzills.', 'Transformacions vives.'], intro: 'Algunes imatges de l’univers de Tomeu Ferments: begudes fermentades, maceracions i conserves. Diferents maneres d’explorar el que el temps pot fer.',
+    label: '03 / Una mirada al projecte', title: ['Fermentats, maceracions', 'i conserves.'], intro: 'Algunes imatges de l’univers de Tomeu Ferments: begudes fermentades, maceracions i conserves. Diferents maneres d’explorar el que el temps pot fer.',
     items: [
       { image: 'Kombucha.jpeg', title: 'Fermentació', subtitle: 'Observar com la vida transforma.', alt: 'Recipient de kombutxa amb aixeta, cobert amb una tela' },
       { image: 'Maceracio.jpeg', title: 'Maceració', subtitle: 'Aromes que troben el seu temps.', alt: 'Tres botelles de vidre amb maceracions i taps de suro' },
