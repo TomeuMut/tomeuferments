@@ -77,7 +77,7 @@ const en: Content = {
   hero: { label: 'Mallorca · Fermenting since 2017', title: ['Artisan fermentation', 'without rushing.'], text: 'A personal project about fermentation, maceration and flavours that carry memories. Made by hand, with curiosity and without rushing.', cta: 'Discover the project', note: 'Passion, patience and a little life in every jar.', imageAlt: 'Close-up of amber kombucha fermenting in a jar', caption: 'Time is an ingredient, too.', location: 'Since 2017 · Mallorca' },
   ribbon: ['Natural processes', 'Traditional knowledge', 'Endless curiosity'],
   story: {
-    label: '01 / The beginning', title: ['Tomeu Ferments:', 'the project?s origins.'],
+    label: '01 / The beginning', title: ['Tomeu Ferments:', 'the project’s origins.'],
     paragraphs: [
       'I’m Bartomeu. I started fermenting in 2017, guided by my grandmother’s knowledge and a simple idea: making the most of fruit from the land. What began as a way of preserving became a journey of discovery.',
       'The curiosity started earlier. Rachid, a friend and classmate from vocational training who worked at Lorien, a bar in Palma, had introduced me to craft beer. New ingredients, questions and ways of transforming everyday things followed.',
@@ -110,7 +110,7 @@ const ca: Content = {
   description: 'Descobreix Tomeu Ferments, el projecte personal d’en Bartomeu a Mallorca: fermentació artesanal, kombutxa, maceracions i conserves des del 2017.',
   locale: 'ca_ES', skip: 'Ves al contingut', home: 'Inici', language: 'Idioma', openMenu: 'Obrir el menú', closeMenu: 'Tancar el menú',
   nav: ['El projecte', 'La filosofia', 'Elaboracions', 'Parlem-ne'],
-  hero: { label: 'Mallorca · Fermentant des del 2017', title: ['Fermentaci? artesanal', 'sense presses.'], text: 'Un projecte personal sobre fermentació, maceracions i sabors que guarden memòria. Fet amb les mans, amb curiositat i sense presses.', cta: 'Coneix el projecte', note: 'Passió, paciència i un poc de vida a cada pot.', imageAlt: 'Primer pla d’una kombutxa de color ambre en fermentació', caption: 'El temps també és un ingredient.', location: 'Des del 2017 · Mallorca' },
+  hero: { label: 'Mallorca · Fermentant des del 2017', title: ['Fermentació artesanal', 'sense presses.'], text: 'Un projecte personal sobre fermentació, maceracions i sabors que guarden memòria. Fet amb les mans, amb curiositat i sense presses.', cta: 'Coneix el projecte', note: 'Passió, paciència i un poc de vida a cada pot.', imageAlt: 'Primer pla d’una kombutxa de color ambre en fermentació', caption: 'El temps també és un ingredient.', location: 'Des del 2017 · Mallorca' },
   ribbon: ['Processos naturals', 'Sabers de sempre', 'Curiositat sense fi'],
   story: {
     label: '01 / L’origen', title: ['Tot va començar', 'amb una curiositat.'],

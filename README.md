@@ -78,3 +78,8 @@ JSON-LD describes the real Person, WebSite, and localized WebPage, including lan
 Vercel permanently redirects `/` to `/es/` and normalizes URLs with trailing slashes. The Nuxt root redirect also uses permanent semantics. Validate the actual HTTP redirect after deployment: static HTML alone cannot send an HTTP status. Icons include the original SVG, a 48 × 48 PNG favicon, and a 180 × 180 Apple touch icon, using the existing monogram and colors. On Windows, regenerate the raster icons and social crop from existing assets using `powershell -File scripts/generate-seo-assets.ps1` from the repository root.
 
 Before publishing, check the production domain, HTTPS, preview indexing controls in Vercel, and legacy indexed URLs. After publishing, submit `https://tomeuferments.es/sitemap.xml` in Google Search Console, inspect all three localized URLs, and validate structured data and social previews. These external actions require access to the relevant accounts and are not performed by a local build. No rankings or rich results are guaranteed.
+
+
+## Design review
+
+The focused accessibility, navigation, responsive-layout and content improvements are recorded in [docs/design-review.md](docs/design-review.md). The review preserves the existing visual identity and all three languages. Type checking, static generation and generated-output anchor/image checks pass; the final Impeccable detector reports no findings. Browser screenshots and interactive verification remain pending because no browser was connected during this run.
