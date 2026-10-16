@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2 - 2026-10-16
+
+- Improve localized SEO metadata, social previews, icons and language alternates.
+- Correct English and Catalan heading characters.
+- Improve keyboard navigation, section tracking and section retention across languages.
+- Increase mobile touch targets and adapt the hero and header for tablet and narrow phones.
+- Preserve original project identity, photos and content; record the design review.
+
+Validation: type checks, static generation and generated language/anchor/image checks passed. Browser interaction and screenshots remain unverified in this run.
+
 ## 1.0.1 - 2026-10-09
 
 - Replace the gallery images with the supplied personal photographs and update image descriptions in all three languages.
