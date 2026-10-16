@@ -29,6 +29,16 @@ if (process.env.VERCEL) {
   const configPath = new URL('../config.json', output);
   const config = JSON.parse(await readFile(configPath, 'utf8'));
   config.routes ??= [];
+  // Nitro emits aliases ending in '/' for these HTML files. Combined with
+  // Vercel trailingSlash normalization those aliases miss the filesystem.
+  // Keep the physical files addressable and route canonical pages explicitly.
+  for (const { code } of languageOptions) delete config.overrides?.[`${code}/index.html`];
+  const languageRoute = { src: '^/(es|en|ca)/$', dest: '/$1/index.html' };
+  if (!config.routes.some(route => route.src === languageRoute.src)) {
+    const filesystem = config.routes.findIndex(route => route.handle === 'filesystem');
+    if (filesystem < 0) throw new Error('Nitro filesystem route missing; refusing to publish incomplete language routing.');
+    config.routes.splice(filesystem, 0, languageRoute);
+  }
   // Match missing URLs only after Nitro's filesystem route has had a chance
   // to serve existing pages and assets, preserving a real HTTP 404 response.
   if (!config.routes.some(route => route.status === 404 && route.dest === '/404.html')) {
