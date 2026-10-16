@@ -1,8 +1,9 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { errorContent, languageOptions, project } from '../src/data/content.ts';
+import { staticOutput } from './static-output.mjs';
 
-const output = new URL('../.output/public/', import.meta.url);
+const output = await staticOutput();
 const home = await readFile(new URL('es/index.html', output), 'utf8');
 const stylesheet = home.match(/<link\b(?=[^>]*rel="stylesheet")[^>]*>/g)?.join('') ?? '';
 if (!stylesheet) throw new Error('Generated site stylesheet not found; refusing an unstyled 404.');
@@ -24,4 +25,15 @@ const html = `<!doctype html>
 <footer class="error-footer"><nav class="language-switcher" aria-label="Idioma">${languageOptions.map(option => `<a href="/${option.code}/" lang="${option.code}" hreflang="${option.code}">${escape(option.name)}</a>`).join('')}</nav></footer>
 </div></body></html>`;
 await writeFile(new URL('404.html', output), html);
+if (process.env.VERCEL) {
+  const configPath = new URL('../config.json', output);
+  const config = JSON.parse(await readFile(configPath, 'utf8'));
+  config.routes ??= [];
+  // Match missing URLs only after Nitro's filesystem route has had a chance
+  // to serve existing pages and assets, preserving a real HTTP 404 response.
+  if (!config.routes.some(route => route.status === 404 && route.dest === '/404.html')) {
+    config.routes.push({ src: '/.*', status: 404, dest: '/404.html' });
+  }
+  await writeFile(configPath, JSON.stringify(config, null, 2) + '\n');
+}
 console.log(`Created standalone static error page: ${fileURLToPath(new URL('404.html', output))}`);

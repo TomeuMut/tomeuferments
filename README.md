@@ -20,7 +20,7 @@ npm run check:seo
 npm run preview
 ```
 
-The production output is `.output/public` and contains prerendered Spanish (`/es/`), English (`/en/`), and Catalan (`/ca/`) pages. The root redirects to Spanish. Unsupported languages return a 404.
+The local static output is `.output/public`; Vercel builds use `.vercel/output/static` and contains prerendered Spanish (`/es/`), English (`/en/`), and Catalan (`/ca/`) pages. The root redirects to Spanish. Unsupported languages return a 404.
 
 ## Content and design
 
@@ -93,3 +93,6 @@ See [docs/seo-migration.md](docs/seo-migration.md) for the OctoberCMS inventory,
 `npm run build` runs a postbuild step that replaces Nuxt's blank static 404 shell with a branded, no-JavaScript error document, then checks all public SEO artifacts. `npm run check:seo` reruns those checks against the existing output. `app/error.vue` supplies the localized interactive error view; the static fallback defaults to Spanish and links to all three languages. Error copy is centralized in `src/data/content.ts`. Node 22.12+ supports the built-in type-stripping flag used by these scripts; no new dependency is required.
 
 Actual hosting status codes, redirect chains, custom-domain association and TLS must be verified on Vercel after publication. Local static checks do not prove production HTTP 404 responses or successful domain setup. No Search Console access or account changes are included.
+
+
+The SEO postbuild scripts share `scripts/static-output.mjs`: with `VERCEL=1` they read and update `.vercel/output/static`, matching Nitro's `vercel-static` preset. Otherwise they use `.output/public`. Vercel-mode validation also checks that the HTTP 404 fallback is ordered after the filesystem route in the generated build-output configuration. Generated `.vercel` artifacts are excluded from Git.
