@@ -68,3 +68,18 @@ The old recipe and legal URLs are intentionally not recreated. Before replacing 
 Type checking and static generation passed for all three languages. Generated pages were checked for one H1, localized HTML language, canonical links, the original email, valid image assets, and absence of forms. Desktop and mobile Chrome review confirmed image loading, section anchors, mobile menu expansion and closure, and no horizontal overflow at 320, 390, 768, 1024, and 1440 px. The integrated browser was unavailable, so Chrome headless was used for this review.
 
 The lockfile starts from the portfolio?s matching dependency set and pins the same versions. Installation succeeded from the local package cache after registry certificate validation failed; TLS verification was not disabled. Nuxt static generation emits the same two non-blocking Windows/Nitro import warnings as the portfolio.
+
+## SEO
+
+Each prerendered language page has a unique localized title and description, one descriptive H1, semantic H2/H3 headings, localized image alternatives, a self-referencing canonical, and reciprocal ES/EN/CA hreflang links with Spanish as x-default. Open Graph includes site name, locale alternatives, URL, title, description, and a 1200 × 630 JPEG preview with dimensions and localized alternative text. Twitter cards include their own title, description, image, and alternative text.
+
+JSON-LD describes the real Person, WebSite, and localized WebPage, including language, creator, page sections, and primary image. It deliberately makes no business, product, review, recipe, or health claims. Indexable pages allow large image previews. The existing robots.txt allows crawling and advertises the multilingual sitemap; sitemap entries now include x-default as well.
+
+Vercel permanently redirects `/` to `/es/` and normalizes URLs with trailing slashes. The Nuxt root redirect also uses permanent semantics. Validate the actual HTTP redirect after deployment: static HTML alone cannot send an HTTP status. Icons include the original SVG, a 48 × 48 PNG favicon, and a 180 × 180 Apple touch icon, using the existing monogram and colors. On Windows, regenerate the raster icons and social crop from existing assets using `powershell -File scripts/generate-seo-assets.ps1` from the repository root.
+
+Before publishing, check the production domain, HTTPS, preview indexing controls in Vercel, and legacy indexed URLs. After publishing, submit `https://tomeuferments.es/sitemap.xml` in Google Search Console, inspect all three localized URLs, and validate structured data and social previews. These external actions require access to the relevant accounts and are not performed by a local build. No rankings or rich results are guaranteed.
+
+
+## Design review
+
+The focused accessibility, navigation, responsive-layout and content improvements are recorded in [docs/design-review.md](docs/design-review.md). The review preserves the existing visual identity and all three languages. Type checking, static generation and generated-output anchor/image checks pass; the final Impeccable detector reports no findings. Browser screenshots and interactive verification remain pending because no browser was connected during this run.

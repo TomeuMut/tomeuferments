@@ -1,3 +1,3 @@
 ﻿<script setup lang="ts">
-await navigateTo('/es/', { redirectCode: 302 });
+await navigateTo('/es/', { redirectCode: 301 });
 </script>
