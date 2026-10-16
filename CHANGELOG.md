@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.6 - 2026-10-16
+
+- Align canonical metadata, sitemap and robots with the WWW domain configured in Vercel.
+- Redirect the apex domain to WWW instead of sending WWW assets into a redirect loop.
+- Check that canonical-host assets cannot be redirected back to the apex domain.
+
 ## 1.0.5 - 2026-10-16
 
 - Fix canonical ES/EN/CA URL routing in Vercel's generated build-output configuration.

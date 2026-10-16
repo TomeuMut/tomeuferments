@@ -7,122 +7,122 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "https://tomeuferments.es/es/",
+      "destination": "https://www.tomeuferments.es/es/",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/sobre-nosotros",
-      "destination": "https://tomeuferments.es/es/#historia",
+      "destination": "https://www.tomeuferments.es/es/#historia",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/sobre-nosotros/",
-      "destination": "https://tomeuferments.es/es/#historia",
+      "destination": "https://www.tomeuferments.es/es/#historia",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/about",
-      "destination": "https://tomeuferments.es/en/#historia",
+      "destination": "https://www.tomeuferments.es/en/#historia",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/about/",
-      "destination": "https://tomeuferments.es/en/#historia",
+      "destination": "https://www.tomeuferments.es/en/#historia",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/uber",
-      "destination": "https://tomeuferments.es/en/#historia",
+      "destination": "https://www.tomeuferments.es/en/#historia",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/uber/",
-      "destination": "https://tomeuferments.es/en/#historia",
+      "destination": "https://www.tomeuferments.es/en/#historia",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/contact",
-      "destination": "https://tomeuferments.es/es/#contacto",
+      "destination": "https://www.tomeuferments.es/es/#contacto",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/contact/",
-      "destination": "https://tomeuferments.es/es/#contacto",
+      "destination": "https://www.tomeuferments.es/es/#contacto",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/kontakt",
-      "destination": "https://tomeuferments.es/en/#contacto",
+      "destination": "https://www.tomeuferments.es/en/#contacto",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
     {
       "source": "/kontakt/",
-      "destination": "https://tomeuferments.es/en/#contacto",
+      "destination": "https://www.tomeuferments.es/en/#contacto",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ]
     },
@@ -131,10 +131,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.tomeuferments.es"
+          "value": "tomeuferments.es"
         }
       ],
-      "destination": "https://tomeuferments.es/:path*",
+      "destination": "https://www.tomeuferments.es/:path*",
       "permanent": true
     },
     {

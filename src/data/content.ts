@@ -2,7 +2,7 @@
   name: 'Tomeu Ferments',
   email: 'tomeuferments@gmail.com',
   instagram: 'https://www.instagram.com/tomeuferments/',
-  url: 'https://tomeuferments.es',
+  url: 'https://www.tomeuferments.es',
 };
 
 export const languageOptions = [
