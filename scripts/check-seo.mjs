@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { project, content, languageOptions } from '../src/data/content.ts';
+import { staticOutput } from './static-output.mjs';
 
 const root = new URL('../', import.meta.url);
-const output = new URL('.output/public/', root);
+const output = await staticOutput();
 const read = path => readFile(new URL(path, output), 'utf8');
 const decode = text => text.replace(/&(?:amp|quot|apos|lt|gt|#39);/g, entity => ({ '&amp;': '&', '&quot;': '"', '&apos;': "'", '&#39;': "'", '&lt;': '<', '&gt;': '>' }[entity]));
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(match => [match[1], decode(match[2])]));
@@ -115,5 +116,11 @@ for (let offset = 2; offset + 8 < jpeg.length;) {
   offset += 2 + jpeg.readUInt16BE(offset + 2);
 }
 assert.deepEqual(dimensions, [1200, 630], 'Actual OG image dimensions');
+if (process.env.VERCEL) {
+  const buildConfig = JSON.parse(await readFile(new URL('../config.json', output), 'utf8'));
+  const filesystem = buildConfig.routes.findIndex(route => route.handle === 'filesystem');
+  const missing = buildConfig.routes.findIndex(route => route.status === 404 && route.dest === '/404.html');
+  assert.ok(filesystem >= 0 && missing > filesystem, 'Vercel missing-route response follows existing files and returns HTTP 404');
+}
 console.log('Sitemap, robots, static 404, legacy URL mapping, redirect targets and OG image dimensions passed.');
 console.log('Hosting HTTP status codes and domain/TLS must also be verified after deployment.');

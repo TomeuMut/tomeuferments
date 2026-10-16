@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.4 - 2026-10-16
+
+- Fix SEO postbuild scripts to use Nitro's Vercel static output instead of the local output path.
+- Share output resolution between static error generation and SEO validation.
+- Ensure the Vercel build-output routing serves missing paths with the branded HTTP 404 page.
+- Ignore generated Vercel artifacts and verify both local and Vercel-mode builds.
+
 ## 1.0.3 - 2026-10-16
 
 - Add evidence-based permanent redirects for legacy OctoberCMS introduction and contact aliases.
