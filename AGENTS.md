@@ -4,7 +4,7 @@
 - Proyecto estático Nuxt 4, Vue 3, TypeScript y TailwindCSS, preparado para Vercel.
 - Mantén ES, EN y CA. Centraliza el contenido en src/data/content.ts y los colores en src/styles/global.css.
 - Conserva la identidad original: #516d61, #c35f47 y #f9edd3.
-- Presentación del proyecto personal: sin recetas, formularios, tienda, backend ni analítica.
+- Presentación del proyecto personal: sin recetas, formularios, tienda ni backend. Google Analytics usa la etiqueta global G-T12FW28YKX, autorizada por el usuario.
 - Usa las fotos existentes; no inventes elaboraciones, eventos, certificaciones ni afirmaciones de salud.
 - Git Flow: main, develop, feature/*, release/*, hotfix/*. La migración se realizó en feature/reset. Continúa los cambios en features creadas desde develop.
 - Commits locales autorizados. No push, merge ni tags sin indicación expresa.

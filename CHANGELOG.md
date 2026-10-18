@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.7 - 2026-10-18
+
+- Add the global Google Analytics tag with measurement ID `G-T12FW28YKX` to all language pages.
+- Update project instructions and documentation to reflect the authorized analytics integration.
+
+Validation: TypeScript, static generation, SEO checks, and a single analytics loader and initialization per language passed.
+
 ## 1.0.6 - 2026-10-16
 
 - Align canonical metadata, sitemap and robots with the WWW domain configured in Vercel.
