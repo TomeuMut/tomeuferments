@@ -62,7 +62,9 @@ Local commits are allowed. Pushes, merges, tags, and deployment require an expli
 
 Canonical and alternate language links use `https://www.tomeuferments.es`. No secrets, database, SMTP service, or runtime API are required. No deployment or DNS changes are performed by preparing this repository.
 
-Legacy introduction and contact aliases now have explicit permanent redirects in `vercel.json`. Retired recipe, recruitment and legal content has no equivalent replacement and must return a real 404, rather than redirecting to the homepage. The evidence and mapping are recorded in `docs/legacy-url-map.json`. No analytics, third-party embeds, or nonessential cookies are added; the site has no cookie banner.
+Legacy introduction and contact aliases now have explicit permanent redirects in `vercel.json`. Retired recipe, recruitment and legal content has no equivalent replacement and must return a real 404, rather than redirecting to the homepage. The evidence and mapping are recorded in `docs/legacy-url-map.json`.
+
+Google Analytics is configured globally in `nuxt.config.ts` using the Google tag with measurement ID `G-T12FW28YKX`. The asynchronous loader and initialization are included on all language pages. The site has no cookie banner.
 
 ## Validation
 
