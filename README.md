@@ -1,10 +1,10 @@
-﻿# Tomeu Ferments
+# Tomeu Ferments
 
 A personal project about fermentation, maceration, traditional knowledge, and rural life in Mallorca. This static website replaces the previous OctoberCMS application with Nuxt, Vue, TypeScript, and TailwindCSS. It presents the story, approach, and selected photographs without recipes, forms, a shop, or a backend.
 
 ## Development
 
-Use Node.js 22 LTS (22.12 or later).
+Use Node.js 22 LTS (22.23.4 or later within Node 22). Install and select the version recorded in `.nvmrc` with your Node version manager.
 
 ```sh
 npm ci
@@ -98,3 +98,25 @@ Actual hosting status codes, redirect chains, custom-domain association and TLS 
 
 
 The SEO postbuild scripts share `scripts/static-output.mjs`: with `VERCEL=1` they read and update `.vercel/output/static`, matching Nitro's `vercel-static` preset. Otherwise they use `.output/public`. Vercel-mode validation also checks that the HTTP 404 fallback is ordered after the filesystem route in the generated build-output configuration. Generated `.vercel` artifacts are excluded from Git.
+
+## Security maintenance (2026-10-23)
+
+Node.js 22.23.4 is the minimum supported runtime, following the [October 21 Node.js security release](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases). `.nvmrc` selects that version, `engines` limits the supported major to Node 22, and `.npmrc` enables `engine-strict` so `npm ci` rejects older runtimes. Keep later Node 22 security patches installed.
+
+Use Node.js 22.x on Vercel and verify that both the build logs and, for server deployments, the function runtime use 22.23.4 or a later patched Node 22 release. Vercel manages runtime patch versions; a repository setting alone cannot update an existing deployment. Redeploy after integrating these changes. If Vercel has not rolled out the minimum patch, installation intentionally fails instead of building with an affected runtime.
+
+Run `npm audit --offline=false` with network access after dependency updates. An offline or cached result is not a current security assessment. The lockfile must be committed together with dependency changes.
+
+The current application has no PHP runtime or Composer dependencies. The [October 21 PHP advisory](https://www.php.net/archive/2026.php) concerns PHP installations serving requests; changing JavaScript dependencies does not patch a separate PHP server or an old OctoberCMS deployment. Legacy PHP services, if still online, require a separate runtime update by their operator.
+### Remaining dependency advisories
+
+The online audit after the Nuxt 4.6.2 upgrade still reports 11 high-severity affected packages per project, propagated from two underlying advisories:
+
+- `braces` 3.0.3: [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm), stack exhaustion on deeply nested glob patterns. It is pulled in by Nitro's glob tooling.
+- `node-forge` 1.4.0: [GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv), RSA signature verification. It is pulled in by `listhen`.
+
+As of this review, both installed versions are the latest published npm versions and neither advisory lists a patched version. The 11 audit entries include parent packages; they are not 11 independent flaws. Do not use `npm audit fix --force`: npm proposes downgrading Nuxt to 4.1.3, which would reintroduce the fixed Nuxt vulnerabilities. Keep development servers private and do not pass untrusted glob patterns to build tooling. Recheck these dependencies when upstream publishes fixes.
+
+Tomeu Ferments and Portfolio ship static files, so these Node packages do not execute on public requests. Lang School builds a Nitro server; deployment runtime and bundled dependencies require separate verification. Passing tests and builds does not establish that every dependency vulnerability is unreachable.
+
+Validated locally with a SHA-256-verified official Node.js 22.23.4 binary: type checks and production builds for all three applications, all 20 Lang School tests, and Tomeu Ferments' generated SEO checks. Static builds emit a Nuxt/Nitro `cache-driver.mjs` external-resolution warning but finish successfully. No production deployment or global Node/PHP installation was changed.
