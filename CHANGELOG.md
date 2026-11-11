@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.8 - 2026-11-11
+
+- Remove the initial fragment from language links and prevent full-section focus outlines while preserving keyboard control and skip-link indicators.
+- Include existing content photographs in the multilingual sitemap and validate image coverage, language links and structured-data consistency.
+- Document Search Console ownership, sitemap submission, indexing and performance follow-up.
+- Include the previously integrated Nuxt security updates and minimum patched Node 22 runtime requirement.
+
+Validation: type checking, static generation and SEO assertions passed. Chromium checks at desktop and narrow mobile widths passed language switching, section retention, keyboard navigation and overflow checks without browser errors. Search Console account setup remains separate.
+
 ## 1.0.7 - 2026-10-18
 
 - Add the global Google Analytics tag with measurement ID `G-T12FW28YKX` to all language pages.
