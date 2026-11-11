@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.tomeuferments.es/es/</loc>
+    <image:image><image:loc>https://www.tomeuferments.es/images/kombucha-hero.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/tomeu.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Kombucha.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Maceracio.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Conserva.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/sharing.jpg</image:loc></image:image>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.tomeuferments.es/es/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tomeuferments.es/en/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://www.tomeuferments.es/ca/" />
@@ -9,6 +15,12 @@
   </url>
   <url>
     <loc>https://www.tomeuferments.es/en/</loc>
+    <image:image><image:loc>https://www.tomeuferments.es/images/kombucha-hero.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/tomeu.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Kombucha.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Maceracio.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Conserva.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/sharing.jpg</image:loc></image:image>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.tomeuferments.es/es/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tomeuferments.es/en/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://www.tomeuferments.es/ca/" />
@@ -16,6 +28,12 @@
   </url>
   <url>
     <loc>https://www.tomeuferments.es/ca/</loc>
+    <image:image><image:loc>https://www.tomeuferments.es/images/kombucha-hero.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/tomeu.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Kombucha.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Maceracio.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/Conserva.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.tomeuferments.es/images/sharing.jpg</image:loc></image:image>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.tomeuferments.es/es/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tomeuferments.es/en/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://www.tomeuferments.es/ca/" />

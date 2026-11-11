@@ -95,7 +95,7 @@ useHead(() => ({
         </nav>
         <div class="header-controls">
           <nav :aria-label="t.language" class="language-switcher">
-            <a v-for="option in languageOptions" :key="option.code" :href="`/${option.code}/#${activeSection}`" :lang="option.code" :hreflang="option.code" :aria-label="option.name" :aria-current="language === option.code ? 'page' : undefined">{{ option.label }}</a>
+            <a v-for="option in languageOptions" :key="option.code" :href="`/${option.code}/${activeSection === 'inicio' ? '' : `#${activeSection}`}`" :lang="option.code" :hreflang="option.code" :aria-label="option.name" :aria-current="language === option.code ? 'page' : undefined">{{ option.label }}</a>
           </nav>
           <button ref="menuButton" type="button" class="menu-toggle" :aria-label="menuOpen ? t.closeMenu : t.openMenu" :aria-expanded="menuOpen" aria-controls="main-navigation" @click="toggleMenu"><component :is="menuOpen ? PhX : PhList" :size="24" aria-hidden="true" focusable="false" /></button>
         </div>
