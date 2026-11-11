@@ -28,7 +28,9 @@ body { margin: 0; }
 a { text-decoration: none; }
 a, button { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; cursor: pointer; }
-a:focus-visible, button:focus-visible, [tabindex="-1"]:focus-visible { outline: 3px solid var(--color-accent-text); outline-offset: 6px; border-radius: 3px; }
+  a:focus-visible, button:focus-visible, main[tabindex="-1"]:focus-visible { outline: 3px solid var(--color-accent-text); outline-offset: 6px; border-radius: 3px; }
+  /* Fragment destinations receive focus for reading, without framing a whole section. */
+  section[tabindex="-1"]:focus, footer[tabindex="-1"]:focus { outline: none; }
 svg { flex-shrink: 0; }
 figure, p { margin: 0; }
 .shell { width: min(1320px, calc(100% - 6rem)); margin-inline: auto; }

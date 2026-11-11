@@ -29,6 +29,8 @@ for (const { code } of languageOptions) {
   titles.add(title);
   assert.equal(meta('description')[0]?.content, content[code].description, `${code}: description`);
   assert.equal(meta('description').length, 1, `${code}: unique description`);
+  const languageLinks = tags(html, 'a').filter(link => link.hreflang);
+  assert.deepEqual(languageLinks.map(link => link.href), languageOptions.map(option => `/${option.code}/`), `${code}: crawlable language links without initial focus fragment`);
   assert.equal(meta('robots').length, 1, `${code}: unique robots rule`);
   assert.ok(!meta('robots')[0].content.includes('noindex'), `${code}: public page is indexable`);
   assert.deepEqual(links.filter(link => link.rel === 'canonical').map(link => link.href), [`${project.url}/${code}/`]);
@@ -47,6 +49,8 @@ for (const { code } of languageOptions) {
   assert.ok(schema, `${code}: structured data`);
   const graph = JSON.parse(schema)['@graph'];
   const webpage = graph.find(node => node['@type'] === 'WebPage');
+  assert.equal(webpage.name, title);
+  assert.equal(webpage.description, content[code].description);
   assert.equal(webpage.url, `${project.url}/${code}/`);
   assert.equal(webpage.inLanguage, code);
   for (const image of tags(html, 'img')) {
@@ -63,7 +67,13 @@ assert.deepEqual(urls, languageOptions.map(({ code }) => `${project.url}/${code}
 for (const block of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
   const alternates = [...block[1].matchAll(/<xhtml:link\b[^>]*>/g)].map(match => attributes(match[0]));
   assert.deepEqual(Object.fromEntries(alternates.map(link => [link.hreflang, link.href])), expectedAlternates);
+  const pageUrl = block[1].match(/<loc>([^<]+)<\/loc>/)[1];
+  const code = new URL(pageUrl).pathname.split('/')[1];
+  const expectedImages = tags(pages.get(code), 'img').filter(image => image.src.startsWith('/images/')).map(image => new URL(image.src, project.url).href).sort();
+  const sitemapImages = [...block[1].matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map(match => match[1]).sort();
+  assert.deepEqual(sitemapImages, expectedImages, `${code}: sitemap includes every content photograph`);
 }
+assert.ok(sitemap.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'));
 const robots = await read('robots.txt');
 assert.match(robots, /User-agent:\s*\*/i);
 assert.match(robots, /Allow:\s*\//i);
